@@ -1,0 +1,221 @@
+<!DOCTYPE forms PUBLIC "-//AIS.PL//DTD Forms Description 0.4//EN"
+                       "http://www.ais.pl/dtds/forms_0_4.dtd"
+[
+  <!ENTITY fv "pl.aislib.util.validators.">
+  <!ENTITY fr "pl.aislib.util.rules.">
+]>
+
+<forms>
+  <form name="form_date_range_001">
+    <fields>
+      <field name="field_001" class="&fv;DateValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+      </field>
+      <field name="field_002" class="&fv;DateValidator">
+        <validation msg-code="2">
+          <property name="required" value="true"/>
+        </validation>
+      </field>
+    </fields>
+    <rules>
+      <rule name="rule_001" class="&fr;DateRangeRule" msg-code="3">
+      	<mapping rule-param="from_date" field-name="field_001"/>
+      	<mapping rule-param="to_date" field-name="field_002"/>
+      </rule>
+    </rules>
+  </form>
+
+  <form name="form_date_range_002">
+    <fields>
+      <field name="field_001_" class="&fv;DateValidator" dynamic="true">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+      </field>
+      <field name="field_002_" class="&fv;DateValidator" dynamic="true">
+        <validation msg-code="2">
+          <property name="required" value="true"/>
+        </validation>
+      </field>
+    </fields>
+    <rules>
+      <rule name="rule_001_" class="&fr;DateRangeRule" msg-code="3">
+      	<mapping rule-param="from_date" field-name="field_001_"/>
+      	<mapping rule-param="to_date" field-name="field_002_"/>
+      </rule>
+    </rules>
+  </form>
+  
+  <form name="form_equality_001">
+    <fields>
+      <field name="field_001" class="&fv;StringValidator">
+        <validation msg-code="5">
+          <property name="required" value="true"/>
+        </validation>
+      </field>
+      <field name="field_002" class="&fv;StringValidator">
+        <validation msg-code="5">
+          <property name="required" value="true"/>
+        </validation>
+      </field>
+    </fields>
+    <rules>
+      <rule name="rule_001" class="&fr;EqualityRule" msg-code="6">
+        <mapping rule-param="object1" field-name="field_001"/>
+        <mapping rule-param="object2" field-name="field_002"/>
+      </rule>
+    </rules>
+  </form>
+
+  <form name="form_equality_002">
+    <fields>
+      <field name="field_001" class="&fv;StringValidator">
+        <validation msg-code="5">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+      <field name="field_002" class="&fv;StringValidator">
+        <validation msg-code="5">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+    </fields>
+    <rules>
+      <rule name="rule_001" class="&fr;EqualityRule" msg-code="6">
+        <mapping rule-param="object1" field-name="field_001"/>
+        <mapping rule-param="object2" field-name="field_002"/>
+      </rule>
+    </rules>
+  </form>
+
+  <form name="form_equality_003">
+    <fields>
+      <field name="field_001" class="&fv;StringValidator">
+        <validation msg-code="5">
+          <property name="required" value="true"/>
+        </validation>
+      </field>
+      <field name="field_002" class="&fv;StringValidator">
+        <validation msg-code="5">
+          <property name="required" value="true"/>
+        </validation>
+      </field>
+      <field name="check_fields" class="&fv;StringValidator">
+        <validation msg-code="5">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+    </fields>
+    <rules>
+      <rule name="rule_001" class="&fr;EqualityRule" msg-code="6">
+        <property name="checkCondition" value="true"/>
+        <property name="checkConditionValue" value="y"/>
+        <mapping rule-param="object1" field-name="field_001"/>
+        <mapping rule-param="object2" field-name="field_002"/>
+        <mapping rule-param="check" field-name="check_fields"/>
+      </rule>
+    </rules>
+  </form>
+
+  <form name="form_equality_004">
+    <fields>
+      <field name="field_001" class="&fv;StringValidator">
+        <validation msg-code="5">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+      <field name="field_002" class="&fv;StringValidator">
+        <validation msg-code="5">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+      <field name="check_fields" class="&fv;StringValidator">
+        <validation msg-code="5">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+    </fields>
+    <rules>
+      <rule name="rule_001" class="&fr;EqualityRule" msg-code="6">
+        <property name="checkCondition" value="true"/>
+        <property name="checkConditionValue" value="y"/>
+        <mapping rule-param="object1" field-name="field_001"/>
+        <mapping rule-param="object2" field-name="field_002"/>
+        <mapping rule-param="check" field-name="check_fields"/>
+      </rule>
+    </rules>
+  </form>
+
+  <form name="form_equality_005">
+    <fields>
+      <field name="field_001" class="&fv;IntegerValidator">
+        <validation msg-code="5">
+          <property name="required" value="true"/>
+        </validation>
+      </field>
+      <field name="field_002" class="&fv;IntegerValidator">
+        <validation msg-code="5">
+          <property name="required" value="true"/>
+        </validation>
+      </field>
+    </fields>
+    <rules>
+      <rule name="rule_001" class="&fr;EqualityRule" msg-code="6">
+        <mapping rule-param="object1" field-name="field_001"/>
+        <mapping rule-param="object2" field-name="field_002"/>
+      </rule>
+    </rules>
+  </form>
+
+  <form name="form_equality_006">
+    <fields>
+      <field name="field_001_" class="&fv;StringValidator" dynamic="true">
+        <validation msg-code="7">
+          <property name="required" value="true"/>
+        </validation>
+      </field>
+      <field name="field_002_" class="&fv;StringValidator" dynamic="true">
+        <validation msg-code="7">
+          <property name="required" value="true"/>
+        </validation>
+      </field>
+    </fields>
+    <rules>
+      <rule name="rule_001_" class="&fr;EqualityRule" msg-code="8">
+        <mapping rule-param="object1" field-name="field_001_"/>
+        <mapping rule-param="object2" field-name="field_002_"/>
+      </rule>
+    </rules>
+  </form>
+
+  <form name="form_equality_007">
+    <fields>
+      <field name="field_001_" class="&fv;StringValidator" dynamic="true">
+        <validation msg-code="7">
+          <property name="required" value="true"/>
+        </validation>
+      </field>
+      <field name="field_002_" class="&fv;StringValidator" dynamic="true">
+        <validation msg-code="7">
+          <property name="required" value="true"/>
+        </validation>
+      </field>
+      <field name="check_fields_" class="&fv;StringValidator" dynamic="true">
+        <validation msg-code="7">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+    </fields>
+    <rules>
+      <rule name="rule_001_" class="&fr;EqualityRule" msg-code="8">
+        <property name="checkCondition" value="true"/>
+        <property name="checkConditionValue" value="y"/>
+        <mapping rule-param="object1" field-name="field_001_"/>
+        <mapping rule-param="object2" field-name="field_002_"/>
+        <mapping rule-param="check" field-name="check_fields_"/>
+      </rule>
+    </rules>
+  </form>
+</forms>

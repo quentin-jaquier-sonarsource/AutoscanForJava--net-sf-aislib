@@ -1,0 +1,65 @@
+<!DOCTYPE forms PUBLIC "-//AIS.PL//DTD Forms Description 0.4//EN"
+                       "http://www.ais.pl/dtds/forms_0_4.dtd"
+[
+  <!ENTITY fv "pl.aislib.util.validators.">
+  <!ENTITY fr "pl.aislib.util.rules.">
+]>
+
+<forms>
+  <form name="form_messages_001">
+    <fields>
+      <field name="field_001_" class="&fv;StringValidator" dynamic="true">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+      </field>
+    </fields>
+  </form>
+  
+  <form name="form_messages_002">
+    <fields>
+      <field name="field_002_" class="&fv;BigDecimalValidator" dynamic="true">
+        <validation msg-code="2">
+        </validation>
+      </field>
+    </fields>
+  </form>
+  
+  <form name="form_messages_003">
+    <fields>
+      <field name="field_001_" class="&fv;StringValidator" dynamic="true">
+        <validation msg-code="2">
+          <property name="regExp" value="((\d\d-\d\d\d)|(\d\d\d\d\d))"/>
+        </validation>
+      </field>
+      <field name="field_002_" class="&fv;DoubleValidator" dynamic="true">
+        <validation msg-code="2">
+          <property name="format" value="###,###,###,##0.##" />
+        </validation>
+      </field>
+    </fields>
+  </form>
+  
+  <form name="form_messages_004">
+    <fields>
+      <field name="check_001_" class="&fv;StringValidator" dynamic="true">
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+      <field name="field_001_" class="&fv;IntegerValidator" dynamic="true">
+        <validation msg-code="3">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+    </fields>
+    <rules>
+      <rule name="rule_check" class="&fr;CheckSingleFieldRule" msg-code="0">
+        <property name="checkCondition" value="true"/>
+        <property name="checkConditionValue" value="1"/>
+        <mapping rule-param="check" field-name="check_001_"/>
+        <mapping rule-param="field" field-name="field_001_"/>
+      </rule>
+    </rules>
+  </form>
+</forms>

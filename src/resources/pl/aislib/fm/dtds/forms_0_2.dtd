@@ -1,0 +1,53 @@
+<!--
+  -
+  - "-//AIS.PL//DTD Forms Description 0.2//EN"
+  - "http://www.ais.pl/dtds/forms_0_2.dtd"
+  -
+  - Warlock, last modified: 07.03.2002
+  -
+  - base 0.2 version created on 06.03.2002
+  -
+  - changes since base 0.2 version:
+  - 2002.03.07: added 'property' child for element 'rule'
+  -->
+
+<!ELEMENT forms (form+)>
+
+<!ELEMENT form (fields,rules?)>
+
+<!ATTLIST form 
+          name          CDATA #REQUIRED>
+
+<!ELEMENT fields (field+)>
+
+<!ELEMENT field (validation*)>
+
+<!ATTLIST field 
+          class         CDATA #REQUIRED
+          name          CDATA #REQUIRED>
+
+<!ELEMENT validation (property*)>
+
+<!ATTLIST validation 
+          msg-code      CDATA #REQUIRED>
+
+<!ELEMENT rules (rule+)>
+
+<!ELEMENT rule (property*, mapping+)>
+
+<!ATTLIST rule 
+          class     CDATA #REQUIRED
+          msg-code  CDATA #REQUIRED
+          name      CDATA #REQUIRED>
+
+<!ELEMENT property EMPTY>
+
+<!ATTLIST property 
+          name   CDATA #REQUIRED
+          value  CDATA #REQUIRED>
+
+<!ELEMENT mapping EMPTY>
+
+<!ATTLIST mapping 
+          field-name  CDATA #REQUIRED
+          rule-param  CDATA #REQUIRED>

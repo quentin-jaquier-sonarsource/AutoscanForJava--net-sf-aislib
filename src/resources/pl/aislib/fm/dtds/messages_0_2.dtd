@@ -1,0 +1,43 @@
+<!--
+  -
+  - "-//AIS.PL//DTD Messages Description 0.2//EN"
+  - "http://www.ais.pl/dtds/messages_0_2.dtd"
+  -
+  - Warlock, 06.03.2002
+  -
+  - Changes since base 0.2 version
+  - 2003.07.18 wswiatek: added 'type' attribute for 'message' element
+  -                      added 'lang' attribute for 'messages' and 'message' element as default language
+  - 2002.11.15 andy: allowed more than one 'content' element, added 'lang' attribute to the 'content' element
+  - 2002.08.30 pikus: add 'message-group' and 'message-ref' elements
+  -->
+
+<!ELEMENT messages (message+,message-group*)>
+
+<!ATTLIST messages
+          lang NMTOKEN #IMPLIED>
+
+<!ELEMENT message (key, content+)>
+
+<!ATTLIST message 
+          code  CDATA #REQUIRED
+          type CDATA #IMPLIED
+          lang NMTOKEN #IMPLIED>
+
+<!ELEMENT key (#PCDATA)>
+
+<!ELEMENT content (#PCDATA)>
+
+<!ATTLIST content
+          lang NMTOKEN #IMPLIED>
+
+<!ELEMENT message-group (message-ref+)>
+
+<!ATTLIST message-group
+          code  CDATA #REQUIRED>
+
+<!ELEMENT message-ref EMPTY>
+
+<!ATTLIST message-ref
+          ref-code CDATA #REQUIRED>
+

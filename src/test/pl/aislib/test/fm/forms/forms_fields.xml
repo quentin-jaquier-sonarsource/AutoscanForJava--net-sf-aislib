@@ -1,0 +1,542 @@
+<!DOCTYPE forms PUBLIC "-//AIS.PL//DTD Forms Description 0.4//EN"
+                       "http://www.ais.pl/dtds/forms_0_4.dtd"
+[
+  <!ENTITY fv "pl.aislib.util.validators.">
+  <!ENTITY fb "pl.aislib.util.builders.">
+  <!ENTITY fr "pl.aislib.util.rules.">
+]>
+
+<forms>
+  <form name="form_string">
+    <fields>
+      <field name="field_001" class="&fv;StringValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+      </field>
+      <field name="field_002" class="&fv;StringValidator">
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+      <field name="field_003" class="&fv;StringValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+      <field name="field_004" class="&fv;StringValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+          <property name="minimumLength" value="3"/>
+        </validation>
+      </field>
+      <field name="field_005" class="&fv;StringValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+          <property name="minimumLength" value="3"/>
+        </validation>
+        <validation msg-code="3">
+          <property name="allowedChars" value="abc"/>
+        </validation>
+      </field>
+      <field name="field_006" class="&fv;StringValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+          <property name="minimumLength" value="3"/>
+        </validation>
+        <validation msg-code="3">
+          <property name="allowedChars" value="abc"/>
+        </validation>
+        <validation msg-code="4">
+          <property name="allowedValues" value="aaa, bbbbb, ccccccc"/>
+        </validation>
+      </field>
+      <field name="field_007" class="&fv;StringValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+          <property name="maximumLength" value="3"/>
+        </validation>
+      </field>
+      <field name="field_008" class="&fv;StringValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+          <property name="disallowedChars" value="def"/>
+        </validation>
+      </field>
+      <field name="field_009" class="&fv;StringValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+          <property name="disallowedValues" value="def"/>
+        </validation>
+      </field>
+      <field name="field_010" class="&fv;StringValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+          <property name="allowedValuesDelimiter" value="; "/>
+          <property name="allowedValues" value="abc; abcd"/>
+        </validation>
+      </field>
+      <field name="field_011" class="&fv;StringValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+          <property name="ignoreCase" value="true"/>
+          <property name="allowedValues" value="ABC, ABCD"/>
+        </validation>
+      </field>
+    </fields>
+  </form>
+
+  <form name="form_string_dynamic_001">
+    <fields>
+      <field name="field_001_" class="&fv;StringValidator" dynamic="true">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+      </field>
+    </fields>
+  </form>
+
+  <form name="form_string_dynamic_002">
+    <fields>
+      <field name="field_002_" class="&fv;StringValidator" dynamic="true">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+          <property name="minimumLength" value="3"/>
+        </validation>
+      </field>
+    </fields>
+  </form>
+
+  <form name="form_integer">
+    <fields>
+      <field name="field_001" class="&fv;IntegerValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+
+      <field name="field_002" class="&fv;IntegerValidator">
+        <validation msg-code="3">
+          <property name="required" value="false"/>
+          <property name="startRange" value="-2"/>
+        </validation>
+        <validation msg-code="4">
+          <property name="endRange" value="3"/>
+        </validation>
+      </field>
+    </fields>
+  </form>
+
+  <form name="form_long">
+    <fields>
+      <field name="field_001" class="&fv;LongValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+
+      <field name="field_002" class="&fv;LongValidator">
+        <validation msg-code="3">
+          <property name="required" value="false"/>
+          <property name="startRange" value="-2"/>
+        </validation>
+        <validation msg-code="4">
+          <property name="endRange" value="3"/>
+        </validation>
+      </field>
+    </fields>
+  </form>
+
+  <form name="form_float">
+    <fields>
+      <field name="field_001" class="&fv;FloatValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+
+      <field name="field_001_locale" class="&fv;FloatValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+          <property name="locale" value="pl"/>
+          <property name="groupingSeparator" value=" "/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+
+      <field name="field_002" class="&fv;FloatValidator">
+        <validation msg-code="3">
+          <property name="required" value="false"/>
+          <property name="startRange" value="-2"/>
+        </validation>
+        <validation msg-code="4">
+          <property name="endRange" value="3.5"/>
+        </validation>
+      </field>
+
+      <field name="field_002_locale" class="&fv;FloatValidator">
+        <validation msg-code="3">
+          <property name="required" value="false"/>
+          <property name="locale" value="pl"/>
+          <property name="groupingSeparator" value=" "/>
+          <property name="startRange" value="-2"/>
+        </validation>
+        <validation msg-code="4">
+          <property name="endRange" value="3,5"/>
+        </validation>
+      </field>
+    </fields>
+  </form>
+
+  <form name="form_double">
+    <fields>
+      <field name="field_001" class="&fv;DoubleValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+
+      <field name="field_001_locale" class="&fv;DoubleValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+          <property name="locale" value="pl"/>
+          <property name="groupingSeparator" value=" "/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+
+      <field name="field_002" class="&fv;DoubleValidator">
+        <validation msg-code="3">
+          <property name="required" value="false"/>
+          <property name="startRange" value="-2"/>
+        </validation>
+        <validation msg-code="4">
+          <property name="endRange" value="3.5"/>
+        </validation>
+      </field>
+
+      <field name="field_002_locale" class="&fv;DoubleValidator">
+        <validation msg-code="3">
+          <property name="required" value="false"/>
+          <property name="locale" value="pl"/>
+          <property name="groupingSeparator" value=" "/>
+          <property name="startRange" value="-2"/>
+        </validation>
+        <validation msg-code="4">
+          <property name="endRange" value="3,5"/>
+        </validation>
+      </field>
+    </fields>
+  </form>
+
+  <form name="form_big_decimal">
+    <fields>
+      <field name="field_001" class="&fv;BigDecimalValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+
+      <field name="field_001_locale" class="&fv;BigDecimalValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+          <property name="locale" value="pl"/>
+          <property name="groupingSeparator" value=" "/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+
+      <field name="field_002" class="&fv;BigDecimalValidator">
+        <validation msg-code="3">
+          <property name="required" value="false"/>
+          <property name="startRange" value="-2"/>
+        </validation>
+        <validation msg-code="4">
+          <property name="endRange" value="3.5"/>
+        </validation>
+      </field>
+
+      <field name="field_002_locale" class="&fv;BigDecimalValidator">
+        <validation msg-code="3">
+          <property name="required" value="false"/>
+          <property name="locale" value="pl"/>
+          <property name="groupingSeparator" value=" "/>
+          <property name="startRange" value="-2"/>
+        </validation>
+        <validation msg-code="4">
+          <property name="endRange" value="3,5"/>
+        </validation>
+      </field>
+    </fields>
+  </form>
+
+  <form name="form_date">
+    <fields>
+      <field name="field_001" class="&fv;DateValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+          <property name="format" value="yyyy-MM-dd"/>
+        </validation>
+        <validation msg-code="3">
+          <property name="startRange" value="2003-06-30"/>
+        </validation>
+      </field>
+      <field name="field_002" class="&fv;DateValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+          <property name="format" value="yyyy-MM-dd"/>
+        </validation>
+        <validation msg-code="3">
+          <property name="startRange" value="2003-06-30"/>
+          <property name="endRange" value="2003-07-31"/>
+        </validation>
+      </field>
+    </fields>
+  </form>
+
+  <form name="form_date_dynamic_001">
+    <fields>
+      <field name="field_001_" class="&fv;DateValidator" dynamic="true">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+          <property name="format" value="yyyy-MM-dd"/>
+        </validation>
+      </field>
+    </fields>
+  </form>
+
+  <form name="form_url">
+    <fields>
+      <field name="field_001" class="&fv;URLValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+      <field name="field_002" class="&fv;URLValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+          <property name="allowHttp" value="true"/>
+        </validation>
+      </field>
+      <field name="field_003" class="&fv;URLValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+          <property name="allowHttp" value="true"/>
+          <property name="allowHttps" value="true"/>
+          <property name="allowFtp" value="true"/>
+          <property name="allowFile" value="true"/>
+        </validation>
+      </field>
+    </fields>
+  </form>
+
+  <form name="form_email">
+    <fields>
+      <field name="field_001" class="&fv;EmailValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+    </fields>
+  </form>
+
+  <form name="form_zip">
+    <fields>
+      <field name="field_001" class="&fv;ZipValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+      <field name="field_002" class="&fv;ZipValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+          <property name="allowExtended" value="true"/>
+          <property name="allowNormal" value="false"/>
+        </validation>
+      </field>
+      <field name="field_003" class="&fv;ZipValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+          <property name="allowExtended" value="false"/>
+          <property name="allowNormal" value="true"/>
+        </validation>
+      </field>
+    </fields>
+  </form>
+
+  <form name="form_ssn">
+    <fields>
+      <field name="field_001" class="&fv;SSNValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+      <field name="field_002" class="&fv;SSNValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+          <property name="allowShort" value="true"/>
+          <property name="allowNormal" value="false"/>
+        </validation>
+      </field>
+      <field name="field_003" class="&fv;SSNValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+          <property name="allowShort" value="true"/>
+        </validation>
+      </field>
+    </fields>
+  </form>
+
+  <form name="form_array">
+    <fields>
+      <field name="field_001" class="&fv;ArrayValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+      <field name="field_002" class="&fv;ArrayValidator">
+        <validation msg-code="1">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+      <field name="field_003" class="&fv;ArrayValidator">
+        <validation msg-code="1">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+          <property name="minimumLength" value="3"/>
+          <property name="maximumLength" value="5"/>
+        </validation>
+      </field>
+    </fields>
+  </form>
+
+  <form name="form_complex_date_001">
+    <fields>
+      <field name="field_001" class="&fv;IntegerValidator">
+        <validation msg-code="1">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+      <field name="field_002" class="&fv;IntegerValidator">
+        <validation msg-code="2">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+      <field name="field_003" class="&fv;IntegerValidator">
+        <validation msg-code="3">
+          <property name="required" value="false"/>
+        </validation>
+      </field>
+      <field name="field_004" class="&fv;DateValidator">
+        <builder class="&fb;DateBuilder">
+          <property name="format" value="MM/dd/yyyy"/>
+          <builder-mapping field-param="day" field-name="field_001"/>
+          <builder-mapping field-param="month" field-name="field_002"/>
+          <builder-mapping field-param="year" field-name="field_003"/>
+        </builder>
+        <validation msg-code="4">
+          <property name="required" value="true"/>
+        </validation>
+        <validation msg-code="5">
+          <property name="required" value="false"/>
+          <property name="format" value="MM/dd/yyyy"/>
+        </validation>
+      </field>
+    </fields>
+  </form>
+</forms>

@@ -1,0 +1,26 @@
+<!DOCTYPE workflow PUBLIC "-//AIS.PL//DTD Workflow Description 0.2//EN"
+                          "http://www.ais.pl/dtds/workflow_0_2.dtd">
+	
+<workflow>
+
+  <page name="index" class="pl.aislib.test.fm.DummyPage" template="nop"/>
+
+  <page name="second" class="pl.aislib.test.fm.DummyPage" template="nop"/>
+
+  <page name="third" class="pl.aislib.test.fm.DummyPage" template="nop">
+  	<trigger name="trigger" page-ref="fourth"/>
+  </page>
+
+  <page name="fourth" class="pl.aislib.test.fm.DummyPage" template="nop"/>
+
+  <page name="trigger1" class="pl.aislib.test.fm.DummyPage" template="nop">
+  	<trigger name="trigger" page-ref="trigger2"/>
+  </page>
+
+  <page name="trigger2" class="pl.aislib.test.fm.DummyPage" template="nop">
+  	<trigger name="trigger" page-ref="trigger3"/>
+  </page>
+
+  <page name="trigger3" class="pl.aislib.test.fm.DummyPage" template="nop">
+  </page>
+</workflow>

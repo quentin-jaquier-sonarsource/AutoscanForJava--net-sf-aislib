@@ -1,0 +1,24 @@
+<!DOCTYPE messages PUBLIC "-//AIS.PL//DTD Messages Description 0.2//EN"
+                          "http://www.ais.pl/dtds/messages_0_2.dtd">
+
+<messages>
+  <message code="0">
+    <key>dummy</key>
+    <content></content>
+  </message>
+
+  <message code="1">
+    <key>field_{3}_empty</key>
+    <content>field no. {4} ({2}) is empty.</content>
+  </message>
+
+  <message code="2">
+    <key>field_{3}_invalid</key>
+    <content>field no. {4} ({2}) is invalid.</content>
+  </message>
+
+  <message code="3">
+    <key>field_{3}_invalid</key>
+    <content>field no. {4} ({2}) with suffix {5} is invalid.</content>
+  </message>
+</messages>
