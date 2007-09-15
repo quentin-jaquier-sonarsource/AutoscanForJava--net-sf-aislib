@@ -1,0 +1,33 @@
+<!--
+  -
+  - "-//AIS.PL//DTD Image Templates Description 0.0//EN"
+  - "http://www.ais.pl/dtds/forms_0_0.dtd"
+  -
+  - Muflon, last modified: 23.09.2002
+  -
+  -->
+
+<!ELEMENT image-templates (font+,image-template+)>
+
+<!ELEMENT font EMPTY>
+<!ATTLIST font name CDATA #REQUIRED>
+<!ATTLIST font font-name CDATA #REQUIRED>
+<!ATTLIST font size CDATA #REQUIRED>
+<!ATTLIST font style CDATA #REQUIRED>
+<!ATTLIST font weight CDATA #REQUIRED>
+<!ATTLIST font red CDATA #REQUIRED>
+<!ATTLIST font green CDATA #REQUIRED>
+<!ATTLIST font blue CDATA #REQUIRED>
+
+<!ELEMENT image-template (field+)>
+<!ATTLIST image-template name CDATA #REQUIRED>
+
+<!ELEMENT field EMPTY>
+<!ATTLIST field name CDATA #REQUIRED>
+<!ATTLIST field position-x CDATA #REQUIRED>
+<!ATTLIST field position-y CDATA #REQUIRED>
+<!ATTLIST field align-x CDATA #IMPLIED>
+<!ATTLIST field align-y CDATA #IMPLIED>
+<!ATTLIST field page-number CDATA #IMPLIED>
+<!ATTLIST field font CDATA #REQUIRED>
+

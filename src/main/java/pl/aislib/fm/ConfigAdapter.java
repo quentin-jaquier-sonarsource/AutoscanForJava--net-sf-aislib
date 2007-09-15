@@ -1,0 +1,20 @@
+package pl.aislib.fm;
+
+/**
+ * Abstract class for encapsulating the environment specific parameters
+ * for application.
+ * 
+ * @author Tomasz Pik
+ * @version $Revision: 1.1.1.1 $
+ * @since AISLIB 0.1
+ */
+public abstract class ConfigAdapter {
+
+  /**
+   * return the environment-specific config parameter for application
+   * @param key config parameter name
+   * @return parameter value or <code>null</code>
+   */
+  public abstract String getConfigParameter(String key);
+
+} // class

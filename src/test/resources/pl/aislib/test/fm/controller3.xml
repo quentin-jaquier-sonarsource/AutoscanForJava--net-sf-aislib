@@ -1,0 +1,13 @@
+<!DOCTYPE workflow PUBLIC "-//AIS.PL//DTD Workflow Description 0.2//EN"
+                          "http://www.ais.pl/dtds/workflow_0_2.dtd">
+
+<workflow session-expiration-check="isNew">
+
+  <page name="index" class="pl.aislib.test.fm.DummyPage" template="nop"/>
+
+  <page name="second" class="pl.aislib.test.fm.DummyPage" template="nop"
+     session-expiration="false"/>
+
+  <page name="third" class="pl.aislib.test.fm.DummyPage" template="nop"/>
+
+</workflow>

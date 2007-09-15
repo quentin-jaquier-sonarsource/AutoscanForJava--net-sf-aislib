@@ -1,0 +1,15 @@
+<body>
+<p>Base classes for templates.</p>
+
+<p>Templates are pieces of information that may be processed to array of bytes
+or Strings using defined map of keys and values.</p>
+
+<p><em>Desing note:</em> it's expected that processing of templates will not
+generate exceptions hence <a href='Template.html#writeTo(java.io.OutputStream)'>Tempate.writeTo(OutputStream)</a>
+and <a href='StringTemplate.html#writeTo(java.io.Writer)'>StringTemplate.writeTo(java.io.Writer)</a> declare only <code>IOException</code>
+as checked excpetion.</p>
+
+<p>If <em>null</em> is supplied as value for existing, previously defined key
+(using <a href='Template.html#setValue(java.lang.String, java.lang.Object)'>Template.setValue(java.lang.String, java.lang.Object)</a>,
+it should be implemented as remove of given key from template.</p>
+</body>

@@ -1,0 +1,40 @@
+<!DOCTYPE messages PUBLIC "-//AIS.PL//DTD Messages Description 0.2//EN"
+                          "http://www.ais.pl/dtds/messages_0_2.dtd">
+
+<messages>
+  <message code="0">
+    <key>dummy</key>
+    <content></content>
+  </message>
+
+  <message code="1">
+    <key>field_{3}_empty</key>
+    <content>field no. {4} ({2}) is empty.</content>
+  </message>
+
+  <message code="2">
+    <key>field_{3}_invalid</key>
+    <content>field no. {4} ({2}) is invalid.</content>
+  </message>
+
+  <message code="3">
+    <key>field_{3}_invalid</key>
+    <content>field no. {4} ({2}) with suffix {5} is invalid.</content>
+  </message>
+
+  <message code="4">
+    <key>Aislib version {custom:version}: field_{entity:name}_empty_{entity:name}.</key>
+    <content>field no. {entity:name} ({1}) is empty. Required property is set to {validator:required}. Minimum length is set to {validator:minimumLength}. Generic name is {entity:genericName}.</content>
+  </message>
+
+  <message code="5">
+    <key>rule_{entity:name}_invalid</key>
+    <content>Rule {entity:name} is invalid. Value of object1 is {rule:object1:value}.</content>
+  </message>
+
+  <message code="6">
+    <key>key</key>
+    <content>{entity:dynamicCount,choice,1#one|1&lt;many {entity:dynamicCount}}</content>
+  </message>
+
+</messages>

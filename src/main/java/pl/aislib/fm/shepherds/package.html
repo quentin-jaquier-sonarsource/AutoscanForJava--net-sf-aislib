@@ -1,0 +1,84 @@
+<body bgcolor='white'>
+Provides classes and interfaces for controlling Sheeps (HttpServletRequest objects)
+wandering on Pasture (Application object) - Internal Framework Package.
+
+<h2>Some Workflow Examples</h2>
+
+<p>Using <i>Shepherds</i> package extends use of <i>Triggers</i> defined in <i>workflow.xml</i>.</p>
+
+<p><i>Triggers</i> have right now two required attributes: <code>name</code> and <code>page-ref</code>, 
+which defines checked property name and reference to {@link pl.aislib.fm.Page} where 
+{@link javax.servlet.http.HttpServletRequest} should be redirected by {@link pl.aislib.fm.Application}
+on cases defined by other two <i>Trigger</i> attributes: <code>type</code> and <code>predicate</code>
+(which are not required and defaults to: <i>request-param</i> and <i>isNotNull</i>).</p>
+
+<p>In following examples we assume that: <i>sourcePage</i> is the <code>Page</code> for which the <i>Triggers</i> 
+belongs and <i>destinationPage</i> is page identified by <code>page-ref</code> attribute. 
+All <i>XML</i> citations should be written into <i>workflow.xml</i> file defining <i>Workflow</i> for application.
+</p>
+
+<h3>Checking if some request parameter exists</h3>
+<p>This is default Application behaviour when <i>Trigger</i> is used with only two required attributes:
+<code>name</code> and <code>page-ref</code>, following <i>XML</i> code:
+<pre>&lt;trigger name='continue' page-ref='next-page' /&gt;</pre>
+will dispatch user request from <i>sourcePage</i> to <i>destinationPage</i>
+if and only if user request has parameter named 'continue'.
+
+<h3>Checking if some request parameter does not exist</h3>
+Following <i>XML</i> code:
+<pre>&lt;trigger name='continue' page-ref='next-page' predicate='isNull' /&gt;</pre>
+will dispatch user request from <i>sourcePage</i> to <i>destinationPage</i> if and only if user request does not
+contain parameter named 'continue'.
+Following <i>XML</i> code maybe be used as replacement for above one:
+<pre>&lt;trigger name='continue' page-ref='next-page' predicate='isNull' type='request-param' /&gt;</pre>
+
+<h3>Checking if some request attribute exists</h3>
+Following <i>XML</i> code:
+<pre>&lt;trigger name='continue' page-ref='next-page' predicate='isNotNull' type='request-attr' /&gt;</pre>
+will dispatch user request from <i>sourcePage</i> to <i>destinationPage</i> if and only if user request has
+attribute named 'continue'.
+
+<h3>Checking if some request attribute does not exist</h3>
+Following <i>XML</i> code:
+<pre>&lt;trigger name='continue' page-ref='next-page' predicate='isNull' type='request-attr' /&gt;</pre>
+will dispatch user request from <i>sourcePage</i> to <i>destinationPage</i> if and only if user request does not have
+attribute named 'continue'.
+
+<h3>Checking if some session attribute exists</h3>
+Following <i>XML</i> code:
+<pre>&lt;trigger name='continue' page-ref='next-page' predicate='isNotNull' type='session-attr' /&gt;</pre>
+will dispatch user request from <i>sourcePage</i> to <i>destinationPage</i> if and only if 
+{@link javax.servlet.http.HttpSession} related to user request has attribute named 'continue'.
+
+<h3>Checking if some session attribute does not exist</h3>
+Following <i>XML</i> code:
+<pre>&lt;trigger name='continue' page-ref='next-page' predicate='isNull' type='session-attr' /&gt;</pre>
+will dispatch user request from <i>sourcePage</i> to <i>destinationPage</i> if and only if 
+{@link javax.servlet.http.HttpSession} related to user request does not have attribute named 'continue'.
+
+<h3>Checking your own {@link org.apache.commons.collections.Predicate}</h3>
+Following <i>XML</i> code:
+<pre>&lt;trigger name='continue' page-ref='next-page' predicate='myPackage.myPredicate' type='session-attr' /&gt;</pre>
+will dispatch user request from <i>sourcePage</i> to <i>destinationPage</i> if and only if 
+attribute named 'continue', taken from {@link javax.servlet.http.HttpSession} related to user request,
+matches <code>Predicate</code> written by YOU.
+
+<!--
+<h2>Package Specification</h2> 
+##### FILL IN ANY SPECS NEEDED BY JAVA COMPATIBILITY KIT #####
+<ul>
+  <li><a href="">##### REFER TO ANY FRAMEMAKER SPECIFICATION HERE #####</a></li>
+</ul> 
+-->
+
+<!--
+<h2>Related Documentation</h2> 
+For overviews, tutorials, examples, guides, and tool documentation, please see:
+<ul>
+  <li><a href="">##### REFER TO NON-SPEC DOCUMENTATION HERE #####</a></li>
+</ul> 
+-->
+
+<!-- Put @see and @since tags down here. -->
+@since AISLIB 0.4
+</body>

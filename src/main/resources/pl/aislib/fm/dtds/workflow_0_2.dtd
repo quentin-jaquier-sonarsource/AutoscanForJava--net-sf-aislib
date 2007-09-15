@@ -1,0 +1,69 @@
+<!--
+  -
+  - "-//AIS.PL//DTD Workflow Description 0.2//EN"
+  - "http://www.ais.pl/dtds/workflow_0_2.dtd"
+  -
+  - Warlock, 05.03.2002
+  - 
+  - Changes since base 0.2 version:
+  - 2002.03.15: Warlock, added flow child for page element
+  - 2002.08.27: Pikus, added 'session-expiration-check' and
+  -             'start-page' attributes for workflow element
+  -             added 'session-expiration' attribute for
+  -             page element
+  - 2002.09.05: Warlock, added 'predicate' and 'type' attributes for 
+  -             trigger element
+  - 2003.07.23: Pikus, added 'request' as a value for 'type' attribute
+                of trigger element
+  -->
+
+<!ELEMENT workflow (trigger*,(template-container|page)+)>
+<!ATTLIST workflow
+          session-expiration-check (isNew|none) 'none'
+          start-page               CDATA 'index'>
+
+<!ELEMENT template-container ((property|property-list)*,page+)>
+
+<!ATTLIST template-container 
+          slot          CDATA #REQUIRED
+          templateName  CDATA #REQUIRED>
+
+<!ELEMENT page ((property|property-list)*,(include|flow|trigger)*)>
+<!ATTLIST page 
+          class      CDATA #REQUIRED
+          name       CDATA #REQUIRED
+          template   CDATA #REQUIRED
+          session-expiration (true|false) 'true'>
+
+<!ELEMENT flow EMPTY>
+<!ATTLIST flow
+          name       CDATA #REQUIRED
+          page-ref   CDATA #REQUIRED>
+     
+<!ELEMENT trigger EMPTY>
+<!ATTLIST trigger 
+          name       CDATA #REQUIRED
+          page-ref   CDATA #REQUIRED
+          predicate  CDATA #IMPLIED
+          type       (request-param|request-attr|session-attr|request) 'request-param'>
+
+<!ELEMENT include EMPTY>
+<!ATTLIST include 
+          name         CDATA #REQUIRED
+          message-code CDATA #IMPLIED
+          template     CDATA #IMPLIED>
+
+<!ELEMENT property EMPTY>
+<!ATTLIST property
+          name         CDATA #REQUIRED
+          value        CDATA #REQUIRED
+          class        CDATA #IMPLIED>
+
+<!ELEMENT property-list (list-item+)>
+<!ATTLIST property-list
+          name         CDATA #REQUIRED
+          class        CDATA #IMPLIED>
+
+<!ELEMENT list-item EMPTY>
+<!ATTLIST list-item
+          value        CDATA #REQUIRED>

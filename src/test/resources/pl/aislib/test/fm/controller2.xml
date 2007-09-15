@@ -1,0 +1,18 @@
+<!DOCTYPE workflow PUBLIC "-//AIS.PL//DTD Workflow Description 0.2//EN"
+                          "http://www.ais.pl/dtds/workflow_0_2.dtd">
+	
+<workflow>
+
+  <trigger name="param" page-ref="parampage" type="request-param"/>
+
+  <trigger name="session" page-ref="sessionpage" type="session-attr"/>
+
+  <page name="index" class="pl.aislib.test.fm.DummyPage" template="nop"/>
+
+  <page name="second" class="pl.aislib.test.fm.DummyPage" template="nop"/>
+
+  <page name="parampage" class="pl.aislib.test.fm.DummyPage" template="nop"/>
+
+  <page name="sessionpage" class="pl.aislib.test.fm.DummyPage" template="nop"/>
+
+</workflow>

@@ -1,0 +1,25 @@
+<!DOCTYPE forms PUBLIC "-//AIS.PL//DTD Forms Description 0.4//EN"
+                       "http://www.ais.pl/dtds/forms_0_4.dtd"
+[
+  <!ENTITY root "pl.aislib.test.fm.forms">
+  <!ENTITY fv   "pl.aislib.util.validators">
+]>
+
+<forms>
+  <form name="form1">
+    <fields>
+      <field name="v1" class="&fv;.StringValidator">
+         <validation msg-code="1"/>
+      </field>
+      <field name="result" class="&root;.SimpleValidator">
+          <builder class="&root;.SimpleBuilder">
+            <property name="property" value="Validator" />
+            <builder-mapping field-name="v1" field-param="v1"/>
+         </builder>
+         <validation msg-code="1">
+           <property name="property" value="Builder" />
+        </validation>
+      </field>
+    </fields>
+  </form>
+</forms>
