@@ -45,40 +45,6 @@
     </dependencies>
   </dependencyManagement>
 
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <!--  deploying also to m1 repository -->
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.3</version>
-          <executions>
-            <execution>
-              <phase>deploy</phase>
-              <goals>
-                <goal>deploy</goal>
-              </goals>
-              <configuration>
-                <altDeploymentRepository>
-                  aislib-sf-m1::legacy::scp://shell.sf.net/home/groups/a/ai/aislib/htdocs/repos/m1
-                </altDeploymentRepository>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-        <!--
-          <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <configuration>
-          <forkMode>pertest</forkMode>
-          </configuration>
-          </plugin>
-        -->
-      </plugins>
-    </pluginManagement>
-  </build>
-
   <developers>
     <developer>
       <name>Andrzej Luszczyk</name>
@@ -170,17 +136,6 @@
     </dependency>
   </dependencies>
 
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-report-plugin</artifactId>
-        <configuration>
-          <showSuccess>false</showSuccess>
-        </configuration>
-      </plugin>
-    </plugins>
-  </reporting>
   <distributionManagement>
     <repository>
       <id>aislib-sf-prod</id>
