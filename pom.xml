@@ -9,6 +9,8 @@
   <packaging>jar</packaging>
   <version>0.6-SNAPSHOT</version>
   <name>AisLib application framework</name>
+  <description>AisLib application framework</description>
+  <url>http://aislib.sf.net/Java/aislib</url>
 
   <organization>
     <name>AIS.PL</name>
@@ -149,5 +151,11 @@
         scp://shell.sf.net/home/groups/a/ai/aislib/htdocs/repos/dev
       </url>
     </snapshotRepository>
+    <site>
+      <id>aislib-sf-site</id>
+      <url>
+        scp://use_site_stage-deploy__for_deploying
+      </url>
+    </site>
   </distributionManagement>
 </project>
