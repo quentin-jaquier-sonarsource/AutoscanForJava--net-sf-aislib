@@ -1,5 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>9</version>
+  </parent>
+
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.sf.aislib</groupId>
   <artifactId>aislib</artifactId>
@@ -7,7 +13,7 @@
   <version>0.6.1-SNAPSHOT</version>
   <name>AisLib application framework</name>
   <description>AisLib application framework</description>
-  <url>http://aislib.sf.net/Java/aislib</url>
+  <url>https://github.com/aispl/net-sf-aislib</url>
 
   <organization>
     <name>AIS.PL</name>
@@ -15,7 +21,9 @@
   </organization>
 
   <scm>
-    <connection>scm:svn:https://aislib.svn.sourceforge.net/svnroot/aislib/Java/aislib/trunk/</connection>
+    <connection>scm:git:git@github.com:aispl/net-sf-aislib.git</connection>
+    <developerConnection>scm:git:git@github.com:aispl/net-sf-aislib.git</developerConnection>
+    <url>git@github.com:aispl/net-sf-aislib.git</url>
   </scm>
 
   <dependencyManagement>
@@ -41,6 +49,14 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 
   <developers>
     <developer>
@@ -133,24 +149,4 @@
     </dependency>
   </dependencies>
 
-  <distributionManagement>
-    <repository>
-      <id>aislib-sf-prod</id>
-      <url>
-        scp://shell.sf.net/home/groups/a/ai/aislib/htdocs/repos/prod
-      </url>
-    </repository>
-    <snapshotRepository>
-      <id>aislib-sf-dev</id>
-      <url>
-        scp://shell.sf.net/home/groups/a/ai/aislib/htdocs/repos/dev
-      </url>
-    </snapshotRepository>
-    <site>
-      <id>aislib-sf-site</id>
-      <url>
-        scp://use_site_stage-deploy__for_deploying
-      </url>
-    </site>
-  </distributionManagement>
 </project>
