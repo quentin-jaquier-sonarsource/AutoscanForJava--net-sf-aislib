@@ -9,7 +9,6 @@ import org.apache.commons.collections.Predicate;
  *
  * @author Tomasz Pik
  * @author Michal Jastak
- * @version $Revision: 1.1.1.1 $
  * @since AISLIB 0.4
  * @see org.apache.commons.collections.Predicate
  */
@@ -19,7 +18,7 @@ public class IsNewHttpSessionPredicate implements Predicate {
    * Checks if given parametr represents new HttpSession.
    *
    * @param httpSession HttpSession object to check
-   * @return <code>true</code> if given <code>httpSession</code> parameter is new Session 
+   * @return <code>true</code> if given <code>httpSession</code> parameter is new Session
    * (see {@link HttpSession#isNew}), <code>false</code> otherwise
    */
   public boolean evaluate(Object httpSession) {

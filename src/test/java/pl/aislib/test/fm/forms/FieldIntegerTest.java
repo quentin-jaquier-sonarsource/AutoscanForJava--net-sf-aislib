@@ -4,14 +4,13 @@ import pl.aislib.fm.forms.ValidateException;
 
 /**
  * Class for testing integer number fields.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.4 $
  */
 public class FieldIntegerTest extends FieldTestAbstract {
 
   // Constructors
-  
+
   /**
    * @see junit.framework.TestCase#TestCase(java.lang.String)
    */
@@ -21,7 +20,7 @@ public class FieldIntegerTest extends FieldTestAbstract {
 
 
   // Protected methods
-  
+
   /**
    * @see pl.aislib.test.fm.forms.FieldTestAbstract#getFormName()
    */
@@ -31,7 +30,7 @@ public class FieldIntegerTest extends FieldTestAbstract {
 
 
   // Test methods
-  
+
   /**
    * field_001: Zero integer.
    * @throws ValidateException if test failed.
@@ -78,10 +77,10 @@ public class FieldIntegerTest extends FieldTestAbstract {
 
   /**
    * field_001: Invalid integer.
-   */  
+   */
   public void test005Bad() {
     field = form.getField("field_001");
-    
+
     try {
       validateField("1.5");
       fail(MSG_001);
@@ -122,10 +121,10 @@ public class FieldIntegerTest extends FieldTestAbstract {
 
   /**
    * field_002: Integer less than start range.
-   */  
+   */
   public void test009Bad() {
     field = form.getField("field_002");
-    
+
     try {
       validateField("-3");
       fail(MSG_001);
@@ -136,10 +135,10 @@ public class FieldIntegerTest extends FieldTestAbstract {
 
   /**
    * field_002: Integer greater than end range.
-   */  
+   */
   public void test010Bad() {
     field = form.getField("field_002");
-    
+
     try {
       validateField("4");
       fail(MSG_001);

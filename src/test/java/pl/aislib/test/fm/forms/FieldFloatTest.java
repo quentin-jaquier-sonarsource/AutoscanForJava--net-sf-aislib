@@ -6,7 +6,6 @@ import pl.aislib.fm.forms.ValidateException;
  * Class for testing float number fields.
  *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.4 $
  */
 public class FieldFloatTest extends FieldTestAbstract {
 

@@ -10,7 +10,6 @@ import pl.aislib.util.validators.BigDecimalValidator;
  * Test for BigDecimal validator.
  *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.3 $
  */
 public class BigDecimalValidatorTest extends TestCase {
 

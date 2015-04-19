@@ -6,7 +6,6 @@ import pl.aislib.fm.forms.ValidateException;
  * Class for testing string fields.
  *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.7 $
  */
 public class FieldStringTest extends FieldTestAbstract {
 

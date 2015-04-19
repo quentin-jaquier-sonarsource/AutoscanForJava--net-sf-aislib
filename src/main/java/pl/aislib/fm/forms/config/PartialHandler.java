@@ -16,7 +16,6 @@ import pl.aislib.lang.Loader;
  * Partial handler class.
  *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.4 $
  */
 public abstract class PartialHandler extends DefaultHandler {
 

@@ -5,14 +5,13 @@ import java.util.Map;
 
 /**
  * Core implementation of message class.
- * 
+ *
  * @author
  * <table>
  *   <tr><td>Andrzej Luszczyk, AIS.PL</td></tr>
  *   <tr><td>Tomasz Pik, AIS.PL</td></tr>
  *   <tr><td>Wojciech Swiatek, AIS.PL</td></tr>
  * </table>
- * @version $Revision: 1.4 $
  */
 public class Message implements IMessage {
 
@@ -20,22 +19,22 @@ public class Message implements IMessage {
    * Type of the message.
    */
   protected int type;
-  
+
   /**
    * Identification code for the message.
    */
   protected int code;
-  
+
   /**
    * Key for the message.
    */
   protected String key;
-  
+
   /**
    * Content of the message.
    */
   protected IMessageContent content;
-  
+
   /**
    * Default language for the message.
    */
@@ -64,7 +63,7 @@ public class Message implements IMessage {
 
   /**
    * Converts the message using an <code>IMessageConverter</code> implementation.
-   * 
+   *
    * @see IMessageConverter#convert(IMessage, String, Object, Object)
    */
   public IMessage convert(IMessageConverter messageConverter, String language, Object keys, Object values) {
@@ -98,7 +97,7 @@ public class Message implements IMessage {
   public String getContent() {
     return getContent(defaultLanguage);
   }
-  
+
   /**
    * @param language language in which the message should give its content.
    * @return content of the message, as string.
@@ -107,7 +106,7 @@ public class Message implements IMessage {
     Object obj = language != null ? content.getContent(language) : content.getContent(defaultLanguage);
     return obj != null ? obj.toString() : null;
   }
-  
+
   /**
    * @see pl.aislib.fm.messages.IMessage#getContentObject()
    */
@@ -162,9 +161,9 @@ public class Message implements IMessage {
 
   /**
    * Default message content class.
-   * 
+   *
    * Objects of this class can contain contents in different languages.
-   * 
+   *
    * @author Andrzej Luszczyk, AIS.PL
    * @author Tomasz Pik, AIS.PL
    * @author Wojciech Swiatek, AIS.PL
@@ -173,14 +172,14 @@ public class Message implements IMessage {
 
     /**
      * Map of contents.
-     * 
-     * Languages are keys and content objects are values. 
+     *
+     * Languages are keys and content objects are values.
      */
     protected Map items = new HashMap();
-    
-    
+
+
     // Constructors
-    
+
     /**
      * @param items map of contents.
      */
@@ -190,7 +189,7 @@ public class Message implements IMessage {
 
 
     // Public methods
-    
+
     /**
      * @see pl.aislib.fm.messages.IMessageContent#getContent(java.lang.String)
      */

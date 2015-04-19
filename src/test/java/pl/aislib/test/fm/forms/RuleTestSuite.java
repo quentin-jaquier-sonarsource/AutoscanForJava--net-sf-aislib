@@ -5,9 +5,8 @@ import junit.framework.TestSuite;
 
 /**
  * Test suite for testing rules.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.4 $
  */
 public class RuleTestSuite {
 

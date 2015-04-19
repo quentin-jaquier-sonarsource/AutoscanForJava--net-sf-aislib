@@ -8,9 +8,8 @@ import java.util.NoSuchElementException;
 
 /**
  * Wrapper for attribute names.
- * 
+ *
  * @author Pawel Chmielewski, AIS.PL
- * @version $Revision: 1.4 $
  * @since AISLIB 0.4
  */
 public class AttributeNameWrapper {
@@ -98,7 +97,7 @@ public class AttributeNameWrapper {
 
   /**
    * Class of predicates starting with a given prefix.
-   * 
+   *
    * @author Pawel Chmielewski, AIS.PL
    */
   protected class AttributeNamePredicate {
@@ -120,7 +119,7 @@ public class AttributeNameWrapper {
     // Public methods
 
     /**
-     * 
+     *
      */
     public boolean evaluate(Object obj) {
       return obj.toString().startsWith(prefix);
@@ -137,7 +136,7 @@ public class AttributeNameWrapper {
 
   /**
    * Class of transformers cutting predicate evaluation object to a given length.
-   * 
+   *
    * @author Pawel Chmielewski, AIS.PL
    */
   class AttributeNameCutter {
@@ -167,7 +166,7 @@ public class AttributeNameWrapper {
 
   /**
    * Inner class of transformers adding string to predicate evaluation object.
-   * 
+   *
    * @author Pawel Chmielewski, AIS.PL
    */
   class AttributeNameAdder {
@@ -175,7 +174,7 @@ public class AttributeNameWrapper {
     // Public methods
 
     /**
-     * 
+     *
      */
     public Object transform(Object input) {
       return predicate.toString() + input.toString();
@@ -243,11 +242,11 @@ public class AttributeNameWrapper {
     }
 
     //-----------------------------------------------------------------------
-    /** 
-     * Returns true if the underlying iterator contains an object that 
+    /**
+     * Returns true if the underlying iterator contains an object that
      * matches the predicate.
      *
-     * @return true if there is another object that matches the predicate 
+     * @return true if there is another object that matches the predicate
      */
     public boolean hasNext() {
       if (nextObjectSet) {
@@ -257,12 +256,12 @@ public class AttributeNameWrapper {
       }
     }
 
-    /** 
+    /**
      * Returns the next object that matches the predicate.
-     * 
+     *
      * @return the next object which matches the given predicate
      * @throws NoSuchElementException if there are no more elements that
-     *  match the predicate 
+     *  match the predicate
      */
     public Object next() {
       if (!nextObjectSet) {
@@ -281,7 +280,7 @@ public class AttributeNameWrapper {
      * if <code>next()</code> was called, but not after
      * <code>hasNext()</code>, because the <code>hasNext()</code> call
      * changes the base iterator.
-     * 
+     *
      * @throws IllegalStateException if <code>hasNext()</code> has already
      *  been called.
      */
@@ -294,7 +293,7 @@ public class AttributeNameWrapper {
 
     //-----------------------------------------------------------------------
     /**
-     * Set nextObject to the next object. If there are no more 
+     * Set nextObject to the next object. If there are no more
      * objects then return false. Otherwise, return true.
      */
     private boolean setNextObject() {
@@ -341,7 +340,7 @@ public class AttributeNameWrapper {
      * Gets the next object from the iteration, transforming it using the
      * current transformer. If the transformer is null, no transformation
      * occurs and the object from the iterator is returned directly.
-     * 
+     *
      * @return the next object
      * @throws java.util.NoSuchElementException if there are no more elements
      */

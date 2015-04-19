@@ -8,9 +8,8 @@ import pl.aislib.fm.forms.ValidateException;
 
 /**
  * Abstract class for testing fields.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.6 $
  */
 public abstract class FieldTestAbstract extends FormTestAbstract {
 
@@ -18,7 +17,7 @@ public abstract class FieldTestAbstract extends FormTestAbstract {
    * Field being used.
    */
   protected Field field;
-  
+
   /**
    * Map of messages from validation of the field.
    */
@@ -26,13 +25,13 @@ public abstract class FieldTestAbstract extends FormTestAbstract {
 
 
   // Constructors
-  
+
   /**
    * @see junit.framework.TestCase#TestCase(java.lang.String)
    */
   public FieldTestAbstract(String name) throws Exception {
     super(name);
-    
+
     form = forms.getForm(getFormName(), null, null, null);
   }
 
@@ -58,7 +57,7 @@ public abstract class FieldTestAbstract extends FormTestAbstract {
    */
   protected void setUp() throws Exception {
     super.setUp();
-    
+
     messagesMap = new LinkedHashMap();
   }
 
@@ -71,11 +70,11 @@ public abstract class FieldTestAbstract extends FormTestAbstract {
    * @param value <code>String</code> object.
    * @return validated object.
    * @throws ValidateException if an error occurs during validation.
-   */  
+   */
   protected Object validateField(String value) throws ValidateException {
     return field.validate(value, messagesMap, field.getName(), null);
   }
-  
+
   /**
    * @param values array of <code>String</code> objects.
    * @return validated objects.
@@ -84,7 +83,7 @@ public abstract class FieldTestAbstract extends FormTestAbstract {
   protected Object validateField(String[] values) throws ValidateException {
     return field.validate(values, messagesMap, field.getName(), null);
   }
-  
+
   /**
    * @return identification code of the message from validation.
    */

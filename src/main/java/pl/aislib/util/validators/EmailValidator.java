@@ -8,7 +8,6 @@ import pl.aislib.fm.forms.ValidateException;
  * Email validation class.
  *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.4 $
  */
 public class EmailValidator extends StringValidator {
 

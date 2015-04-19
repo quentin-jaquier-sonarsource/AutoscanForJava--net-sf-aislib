@@ -6,14 +6,13 @@ import java.util.Date;
 
 /**
  * Timestamp validation class.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.2 $
  */
 public class TimestampValidator extends DateValidator {
 
   // Constructors
-  
+
   /**
    * Constructor for TimestampValidator.
    */
@@ -23,7 +22,7 @@ public class TimestampValidator extends DateValidator {
 
 
   // Protected methods
-  
+
   /**
    * @see pl.aislib.util.validators.StringValidator#convertObject(String)
    */

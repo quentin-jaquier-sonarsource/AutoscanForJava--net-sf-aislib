@@ -4,14 +4,13 @@ import pl.aislib.fm.forms.ValidateException;
 
 /**
  * Class for testing zip code fields.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.5 $
  */
 public class FieldZipTest extends FieldTestAbstract {
 
   // Constructors
-  
+
   /**
    * @see junit.framework.TestCase#TestCase(java.lang.String)
    */
@@ -21,7 +20,7 @@ public class FieldZipTest extends FieldTestAbstract {
 
 
   // Protected methods
-  
+
   /**
    * @see pl.aislib.test.fm.forms.FieldTestAbstract#getFormName()
    */
@@ -31,14 +30,14 @@ public class FieldZipTest extends FieldTestAbstract {
 
 
   // Test methods
-  
+
   /**
    * field_001: Valid zip code in normal format, normal and extended formats allowed.
    * @throws ValidateException if test failed.
    */
   public void test001Ok() throws ValidateException {
     field = form.getField("field_001");
-    
+
     validateField("12345");
   }
 
@@ -48,7 +47,7 @@ public class FieldZipTest extends FieldTestAbstract {
    */
   public void test002Ok() throws ValidateException {
     field = form.getField("field_001");
-    
+
     validateField("12345-6789");
   }
 
@@ -57,7 +56,7 @@ public class FieldZipTest extends FieldTestAbstract {
    */
   public void test003Bad() {
     field = form.getField("field_001");
-    
+
     try {
       validateField("");
       fail(MSG_001);
@@ -71,7 +70,7 @@ public class FieldZipTest extends FieldTestAbstract {
    */
   public void test004Bad() {
     field = form.getField("field_001");
-    
+
     try {
       validateField("1a");
       fail(MSG_001);
@@ -86,7 +85,7 @@ public class FieldZipTest extends FieldTestAbstract {
    */
   public void test005Ok() throws ValidateException {
     field = form.getField("field_002");
-    
+
     validateField("12345-6789");
   }
 
@@ -95,7 +94,7 @@ public class FieldZipTest extends FieldTestAbstract {
    */
   public void test006Bad() {
     field = form.getField("field_002");
-    
+
     try {
       validateField("12345");
       fail(MSG_001);
@@ -110,7 +109,7 @@ public class FieldZipTest extends FieldTestAbstract {
    */
   public void test007Ok() throws ValidateException {
     field = form.getField("field_003");
-    
+
     validateField("12345");
   }
 
@@ -119,7 +118,7 @@ public class FieldZipTest extends FieldTestAbstract {
    */
   public void test008Bad() {
     field = form.getField("field_003");
-    
+
     try {
       validateField("12345-6789");
       fail(MSG_001);

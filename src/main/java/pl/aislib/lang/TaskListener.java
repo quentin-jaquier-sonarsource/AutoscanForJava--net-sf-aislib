@@ -6,7 +6,6 @@ import java.util.EventListener;
  * The listener interface for receiving task events.
  *
  * @author Tomasz Sandecki
- * @version $Revision: 1.1.1.1 $
  * @since AISLIB 0.3
  */
 public interface TaskListener extends EventListener {

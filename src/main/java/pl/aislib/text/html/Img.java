@@ -33,15 +33,14 @@ import pl.aislib.text.html.attrs.CDataAttribute;
  * <dl>
  *   <dt><b>Note:</b></dt>
  *   <dd><code>align</code>, <code>border</code>, <code>hspace</code>, <code>ismap</code>, <code>longdesc</code>,
- *       <code>name</code>, <code>usemap</code>, <code>vspace</code> attributes are available since 
+ *       <code>name</code>, <code>usemap</code>, <code>vspace</code> attributes are available since
  *       <tt>AISLIB 0.2</tt></dd>
  * </dl>
  * @author Michal Jastak, AIS.PL
  * @since AISLIB 0.1
- * @version $Revision: 1.1.1.1 $
  */
 public class Img extends AbstractHTMLObject {
-  
+
   /**
    *
    */

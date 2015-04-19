@@ -15,7 +15,6 @@ import pl.aislib.lang.ReflectionException;
  * Base field handler class.
  *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.6 $
  */
 public abstract class FieldHandler extends PartialHandler {
 

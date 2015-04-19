@@ -8,7 +8,6 @@ package pl.aislib.servlet;
  * @deprecated use {@link pl.aislib.util.web.servlet.BrowserServlet} instead.
  * @author Tomasz Sandecki, AIS.PL
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.3 $
  */
 public class BrowserServlet extends pl.aislib.util.web.servlet.BrowserServlet {
 

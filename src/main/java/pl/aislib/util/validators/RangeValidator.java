@@ -4,16 +4,15 @@ import pl.aislib.fm.forms.ValidateException;
 
 /**
  * Range validation abstract class.
- * 
+ *
  * <p>
  * Implement additional properties:
  * <ul>
  *   <li><code>startRange</code></li>
  *   <li><code>endRange</code></li>
  * </ul>
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.3 $
  */
 public abstract class RangeValidator extends StringValidator {
 
@@ -29,10 +28,10 @@ public abstract class RangeValidator extends StringValidator {
 
 
   // Constructors
-  
+
   /**
    * Base constructor.
-   * 
+   *
    * @see StringValidator#StringValidator()
    */
   public RangeValidator() {
@@ -44,7 +43,7 @@ public abstract class RangeValidator extends StringValidator {
 
 
   // Public validation methods
-  
+
   /**
    * @see pl.aislib.util.validators.Validator#validateObject(Object)
    */
@@ -58,10 +57,10 @@ public abstract class RangeValidator extends StringValidator {
 
 
   // Public property methods
-    
+
   /**
    * Should be overridden in subclasses.
-   * 
+   *
    * @param value a start range.
    */
   public void setStartRange(String value) {
@@ -70,7 +69,7 @@ public abstract class RangeValidator extends StringValidator {
 
   /**
    * Should be overridden in subclasses.
-   * 
+   *
    * @param value an end range.
    */
   public void setEndRange(String value) {
@@ -90,7 +89,7 @@ public abstract class RangeValidator extends StringValidator {
 
   /**
    * Should be overridden in subclasses.
-   * 
+   *
    * @param value an object.
    * @param minInclusive flag for checking lower bound of the range.
    * @param maxInclusive flag for checking upper bound of the range.

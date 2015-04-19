@@ -3,10 +3,9 @@ package pl.aislib.util.predicates;
 import org.apache.commons.collections.Predicate;
 
 /**
- * Predicate which is true only if evaluated object is <code>null</code>. 
+ * Predicate which is true only if evaluated object is <code>null</code>.
  *
  * @author Michal Jastak
- * @version $Revision: 1.1.1.1 $
  * @since AISLIB 0.4
  */
 public class IsNullPredicate implements Predicate {

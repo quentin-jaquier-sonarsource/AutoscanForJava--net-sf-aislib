@@ -14,7 +14,6 @@ import pl.aislib.fm.jdbc.Manager;
  * Container for set of <code>Database</code> instances.
  *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.2 $
  * @since AISLIB 0.2
  */
 public class KeyedDatabase extends Database {
@@ -23,10 +22,10 @@ public class KeyedDatabase extends Database {
    * Database instances.
    */
   protected Map databases;
-  
-  
+
+
   // Constructors
-  
+
   /**
    *
    */
@@ -37,10 +36,10 @@ public class KeyedDatabase extends Database {
 
 
   // Public methods
-  
+
   /**
    * Puts database to map.
-   * 
+   *
    * @param databaseName name of database.
    * @param database <code>Database</code> implementation.
    */
@@ -58,7 +57,7 @@ public class KeyedDatabase extends Database {
 
 
   // Package methods
-  
+
   /**
    * @see pl.aislib.fm.Database#setLog(org.apache.commons.logging.Log)
    */
@@ -73,16 +72,16 @@ public class KeyedDatabase extends Database {
 
 
   // Private classes
-  
+
   /**
    * Not supported manager implementation.
-   * 
+   *
    * @author Tomasz Pik, AIS.PL
    */
   private static class NopManager extends Manager {
-    
+
     // Public methods
-    
+
     /**
      * @see pl.aislib.fm.jdbc.Manager#getConnection()
      */

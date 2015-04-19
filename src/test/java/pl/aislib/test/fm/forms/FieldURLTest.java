@@ -4,14 +4,13 @@ import pl.aislib.fm.forms.ValidateException;
 
 /**
  * Class for testing url fields.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.5 $
  */
 public class FieldURLTest extends FieldTestAbstract {
 
   // Constructors
-  
+
   /**
    * @see junit.framework.TestCase#TestCase(java.lang.String)
    */
@@ -21,7 +20,7 @@ public class FieldURLTest extends FieldTestAbstract {
 
 
   // Protected methods
-  
+
   /**
    * @see pl.aislib.test.fm.forms.FieldTestAbstract#getFormName()
    */
@@ -31,13 +30,13 @@ public class FieldURLTest extends FieldTestAbstract {
 
 
   // Test methods
-  
+
   /**
    * field_001: Empty string, no URL allowed.
    */
   public void test001Bad() {
     field = form.getField("field_001");
-    
+
     try {
       validateField("");
       fail(MSG_001);
@@ -51,7 +50,7 @@ public class FieldURLTest extends FieldTestAbstract {
    */
   public void test002Bad() {
     field = form.getField("field_001");
-    
+
     try {
       validateField("1a");
       fail(MSG_001);
@@ -59,13 +58,13 @@ public class FieldURLTest extends FieldTestAbstract {
       checkErrorCode(2);
     }
   }
-  
+
   /**
    * field_001: Valid URL, no URL allowed.
    */
   public void test003Bad() {
     field = form.getField("field_001");
-    
+
     try {
       validateField("http://www.ais.pl");
       fail(MSG_001);
@@ -80,7 +79,7 @@ public class FieldURLTest extends FieldTestAbstract {
    */
   public void test004Ok() throws ValidateException {
     field = form.getField("field_002");
-    
+
     validateField("http://www.ais.pl");
   }
 
@@ -89,7 +88,7 @@ public class FieldURLTest extends FieldTestAbstract {
    */
   public void test005Bad() {
     field = form.getField("field_002");
-    
+
     try {
       validateField("https://secure.ais.pl");
       fail(MSG_001);
@@ -104,7 +103,7 @@ public class FieldURLTest extends FieldTestAbstract {
    */
   public void test006Ok() throws ValidateException {
     field = form.getField("field_003");
-    
+
     validateField("https://secure.ais.pl");
   }
 
@@ -114,7 +113,7 @@ public class FieldURLTest extends FieldTestAbstract {
    */
   public void test007Ok() throws ValidateException {
     field = form.getField("field_003");
-    
+
     validateField("ftp://ftp.ais.pl");
   }
 
@@ -124,7 +123,7 @@ public class FieldURLTest extends FieldTestAbstract {
    */
   public void test008Ok() throws ValidateException {
     field = form.getField("field_003");
-    
+
     validateField("file:///ais/index.html");
   }
 

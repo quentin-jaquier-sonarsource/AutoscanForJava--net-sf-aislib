@@ -12,7 +12,6 @@ import java.util.GregorianCalendar;
  * subclasses of these two.
  *
  * @author Daniel Rychcik, AIS.PL
- * @version $Revision: 1.1.1.1 $
  * @since AISLIB 0.3
  */
 

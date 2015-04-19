@@ -6,9 +6,8 @@ package pl.aislib.text.html.attrs;
  * <ul>
  *   <li>id</li><li>class</li><li>style</li><li>title</li>
  * </ul>
- * 
- * @author Michal Jastak 
- * @version $Revision: 1.1.1.1 $
+ *
+ * @author Michal Jastak
  * @since AISLIB 0.1
  * @see <a href='http://www.w3.org/TR/html4/sgml/dtd.html#coreattrs'>CoreAttrs</a>
  */

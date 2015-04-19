@@ -19,7 +19,6 @@ import org.jdom.Namespace;
  * Core class for all HTML objects.
  * @author Michal Jastak
  * @since AISLIB 0.1
- * @version $Revision: 1.1.1.1 $
  */
 public class AbstractHTMLObject extends Object {
 

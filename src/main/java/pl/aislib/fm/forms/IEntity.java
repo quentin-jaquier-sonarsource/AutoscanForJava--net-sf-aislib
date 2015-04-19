@@ -2,9 +2,8 @@ package pl.aislib.fm.forms;
 
 /**
  * Entity interface.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.2 $
  */
 public interface IEntity {
 

@@ -2,14 +2,13 @@ package pl.aislib.util.validators;
 
 /**
  * Float number validation class.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.2 $
  */
 public class FloatValidator extends NumberValidator {
 
   // Constructors
-  
+
   /**
    * Base constructor.
    */
@@ -19,7 +18,7 @@ public class FloatValidator extends NumberValidator {
 
 
   // Protected check methods
-  
+
   /**
    * @see pl.aislib.util.validators.RangeValidator#checkRange
    */
@@ -45,16 +44,16 @@ public class FloatValidator extends NumberValidator {
    */
   protected Object convertObject(String value) {
     Float result = null;
-  
+
     try {
       result = new Float(parseNumber(value).floatValue());
     } catch (Exception e) {
       ;
     }
-    
+
     return result;
   }
-    
+
   /**
    * @see pl.aislib.util.validators.StringValidator#formatString
    */
@@ -62,5 +61,5 @@ public class FloatValidator extends NumberValidator {
     Float result = new Float(parseNumber(value).floatValue());
     return result;
   }
-  
+
 } // FloatValidator class

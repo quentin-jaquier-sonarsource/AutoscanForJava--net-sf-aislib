@@ -8,7 +8,6 @@ import java.sql.SQLException;
  * @see HelperMethods#executeInTransaction(Connection con, DatabaseOperation operation, int isolationLevel)
  * @author Milosz Tylenda
  * @since 0.5
- * @version $Revision: 1.1.1.1 $
  */
 public interface DatabaseOperation {
 

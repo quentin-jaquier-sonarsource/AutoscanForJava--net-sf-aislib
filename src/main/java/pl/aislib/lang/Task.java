@@ -33,7 +33,6 @@ package pl.aislib.lang;
  *
  * @author Tomasz Sandecki, AIS.PL
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.2 $
  * @since AISLIB 0.3
  */
 public abstract class Task extends Thread {
@@ -68,7 +67,7 @@ public abstract class Task extends Thread {
    * @throws TaskProcessingException if something goes wrong.
    */
   public abstract Object process() throws TaskProcessingException;
-  
+
   /**
    * Execute task operation.
    *
@@ -76,9 +75,9 @@ public abstract class Task extends Thread {
    * <ul>
    *   <li>notify all registered listeners with {@link TaskListener#taskStarted}</li>
    *   <li>call {@link #process}</li>
-   *   <li>if <code>process</code> return with a result, notify all registered listeners 
+   *   <li>if <code>process</code> return with a result, notify all registered listeners
    *       with {@link TaskListener#taskFinished}</li>
-   *   <li>if <code>process</code> throws an exception, notify all registered listeners 
+   *   <li>if <code>process</code> throws an exception, notify all registered listeners
    *       with {@link TaskListener#taskFailed}
    * </ul>
    * <p><b>NOTE:</b> don't call this method directly, use {@link Thread#start} instead.</p>
@@ -96,7 +95,7 @@ public abstract class Task extends Thread {
   /**
    * Adds the specified task listener to receive events from this task.
    *
-   * @param listener listener to be added. 
+   * @param listener listener to be added.
    */
   public void addTaskListener(TaskListener listener) {
     listenerSupport.addTaskListener(listener);
@@ -112,14 +111,14 @@ public abstract class Task extends Thread {
   }
 
   /**
-   * Notify all registerd extended task listeners with {@link ExtendedTaskListener#taskNotify} 
+   * Notify all registerd extended task listeners with {@link ExtendedTaskListener#taskNotify}
    *
    * @param object object to propagate
    */
   protected void fireTaskEvent(Object object) {
     listenerSupport.fireTaskEvent(object);
   }
-  
+
   /**
    * Notify all registerd extended task listeners with {@link ExtendedTaskListener#taskProgress}
    *

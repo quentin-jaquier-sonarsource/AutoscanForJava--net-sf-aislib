@@ -4,8 +4,8 @@ import pl.aislib.text.html.attrs.AbstractHTMLAttribute;
 
 /**
  * Represents HTML Checkbox (input element with type set to 'checkbox').
+ *
  * @author Michal Jastak, AIS.PL
- * @version $Revision: 1.1.1.1 $
  * @see Input
  * @since AISLIB 0.2
  */
@@ -20,5 +20,5 @@ public class Checkbox extends Input {
     attr.setValue("checkbox");
     attr.lockValue();
   }
-  
+
 } // class

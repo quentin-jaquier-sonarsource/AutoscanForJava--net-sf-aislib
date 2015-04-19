@@ -28,13 +28,12 @@ import pl.aislib.text.html.attrs.EventsAttributesSet;
  *     <li>type</li>
  *   </ul>
  * </li>
- * <li>any content</li> 
+ * <li>any content</li>
  * </ul>
  * @author Michal Jastak, AIS.PL
  * @see CoreAttributesSet
  * @see EventsAttributesSet
  * @since AISLIB 0.2
- * @version $Revision: 1.1.1.1 $
  */
 public class Anchor extends AbstractHTMLObject {
 
@@ -64,5 +63,5 @@ public class Anchor extends AbstractHTMLObject {
     }
     addAttributesSet(selectAttrs);
   }
-  
+
 } // class

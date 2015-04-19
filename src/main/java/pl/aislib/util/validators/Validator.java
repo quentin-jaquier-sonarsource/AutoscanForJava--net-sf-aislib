@@ -4,25 +4,24 @@ import pl.aislib.fm.forms.ValidateException;
 
 /**
  * Class of objects validating single strings.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.2 $
  */
 public abstract class Validator extends AbstractValidator implements pl.aislib.fm.forms.Validator {
 
   // Public methods
-  
+
   /**
    * @see pl.aislib.util.validators.AbstractValidator#validate(String)
    */
   public Object validate(String value) throws ValidateException {
 
     value = (String) super.validate(value);
-    
+
     if (required.isFalse() && checkEmpty(value)) {
       return value;
     }
-    
+
     // Validate against everything that concerns the value as a string
     validateString(value);
 
@@ -37,18 +36,18 @@ public abstract class Validator extends AbstractValidator implements pl.aislib.f
     if (oValue != null) {
       validateObject(oValue);
     }
-    
+
     return oValue;
   }
 
 
   // Protected validation methods
-  
+
   /**
    * Syntactic validation of a string.
-   * 
+   *
    * Must be overridden in subclasses.
-   * 
+   *
    * @param value a string to be syntactically validated.
    * @throws ValidateException if the string could not be validated.
    */
@@ -56,9 +55,9 @@ public abstract class Validator extends AbstractValidator implements pl.aislib.f
 
   /**
    * Conversion of a string to a desired object.
-   * 
+   *
    * Must be overridden in subclasses.
-   * 
+   *
    * @param value a string to be converted.
    * @return a converted object.
    * @throws ValidateException if the string could not be converted.
@@ -67,16 +66,16 @@ public abstract class Validator extends AbstractValidator implements pl.aislib.f
 
   /**
    * Semantic validation of a string as an object.
-   * 
+   *
    * Must be overriden in subclasses.
-   * 
+   *
    * @param value an object to be validated.
    * @throws ValidateException if the object could not be validated.
    */
   protected abstract void validateObject(Object value) throws ValidateException;
 
 
-  // Protected methods  
+  // Protected methods
 
   /**
    * @see pl.aislib.util.validators.AbstractValidator#checkEmpty(Object)

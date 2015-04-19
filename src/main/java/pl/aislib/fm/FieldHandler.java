@@ -17,7 +17,6 @@ import pl.aislib.util.validators.StringValidator;
  * XML handler for handling framework's fields.
  *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.6 $
  */
 public class FieldHandler extends pl.aislib.fm.forms.config.FieldHandler {
 

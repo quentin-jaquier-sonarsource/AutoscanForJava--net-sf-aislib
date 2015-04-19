@@ -22,7 +22,6 @@ import pl.aislib.text.html.attrs.EnumeratedAttribute;
  * See {@link EnumeratedAttribute} for <code>disabled</code> and <code>selected</code>.
  * See {@link CDataAttribute} for <code>label</code> and <code>value</code>.
  * @author Michal Jastak
- * @version $Revision: 1.1.1.1 $
  * @since AISLIB 0.1
  */
 public class Option extends AbstractHTMLObject {

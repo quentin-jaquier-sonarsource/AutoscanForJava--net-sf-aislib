@@ -37,7 +37,6 @@ import com.lowagie.text.pdf.PdfWriter;
  * doesn't work. Use "Serif" instead.
  *
  * @author Milosz Tylenda, AIS.PL
- * @version $Revision: 1.1 $
  */
 public class ITextPdfTemplate implements Template {
 

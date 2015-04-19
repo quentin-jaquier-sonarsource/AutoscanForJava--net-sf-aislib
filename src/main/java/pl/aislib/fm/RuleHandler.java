@@ -12,7 +12,6 @@ import pl.aislib.fm.forms.config.IRule;
  * XML handler for handling framework's rules.
  *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.3 $
  */
 public class RuleHandler extends pl.aislib.fm.forms.config.RuleHandler {
 

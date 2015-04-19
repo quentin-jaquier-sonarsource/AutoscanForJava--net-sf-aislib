@@ -8,7 +8,6 @@ import pl.aislib.util.validators.EmailValidator;
 
 /**
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.3 $
  */
 public class EmailValidatorTest extends TestCase implements IConstants {
 

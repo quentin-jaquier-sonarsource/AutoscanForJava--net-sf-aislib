@@ -6,7 +6,6 @@ package pl.aislib.util.crypt;
  * @author unknown
  * @author Tomasz Pik, AIS.PL (porting to AISLIB)
  * @since AISLIB 0.4
- * @version $Revision: 1.1.1.1 $
  */
 public class UnixCrypt {
 

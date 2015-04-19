@@ -2,7 +2,6 @@ package pl.aislib.test.lang;
 
 /**
  * @author Tomasz Sandecki, AIS.PL
- * @version $Revision: 1.1 $
  */
 public class MyConstsClass {
   public final String STRING_PUBLIC_FINAL = "ala";

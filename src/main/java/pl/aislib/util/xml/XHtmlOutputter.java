@@ -22,7 +22,6 @@ import org.jdom.Text;
  * </dl>
  * @author Michal Jastak
  * @since AISLIB 0.2
- * @version $Revision: 1.2 $
  */
 public class XHtmlOutputter {
 

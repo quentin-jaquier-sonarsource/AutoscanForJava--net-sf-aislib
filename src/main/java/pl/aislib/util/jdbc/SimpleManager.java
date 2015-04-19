@@ -12,7 +12,6 @@ import pl.aislib.fm.jdbc.Manager;
  * The simplest implementation of JDBC <code>Manager</code>.
  *
  * @author Tomasz Pik
- * @version $Revision: 1.1.1.1 $
  */
 public class SimpleManager extends Manager implements Serializable {
 
@@ -35,7 +34,7 @@ public class SimpleManager extends Manager implements Serializable {
   throws ClassNotFoundException {
     this(_jdbcUrl, _jdbcUser, _jdbcPassword);
     Class.forName(_jdbcDriver);
-    jdbcDriver = _jdbcDriver; 
+    jdbcDriver = _jdbcDriver;
     driverLoaded = true;
   }
 

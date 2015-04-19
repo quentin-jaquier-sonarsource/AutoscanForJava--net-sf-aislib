@@ -2,7 +2,7 @@ package pl.aislib.util.validators;
 
 /**
  * US states and Canada provinces validation class.
- * 
+ *
  * <p>
  * Implemented additional properties:
  * <ul>
@@ -89,9 +89,8 @@ package pl.aislib.util.validators;
  *   <tr><td>WY</td><td>Wyoming</td></tr>
  *   <tr><td>YT</td><td>Yukon Territory</td></tr>
  * </table>
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.4 $
  */
 public class StatesValidator extends StringValidator {
 
@@ -99,22 +98,22 @@ public class StatesValidator extends StringValidator {
    * Constant describing type of US states.
    */
   protected static final String KEY_STATES_USA = "Usa";
-  
+
   /**
    * Constant describing type of US Army.
    */
   protected static final String KEY_STATES_US_ARMY = "US Army";
-  
+
   /**
-   * Constant describing type of US territories. 
+   * Constant describing type of US territories.
    */
   protected static final String KEY_STATES_US_TERRITORIES = "US Territories";
-  
+
   /**
    * Constant describing type of Canada provinces.
    */
   protected static final String KEY_STATES_CANADA = "Canada";
-  
+
   /**
    * Constant describing type of outside US/Canada regions.
    */
@@ -128,7 +127,7 @@ public class StatesValidator extends StringValidator {
     "AK, AL, AR, AZ, CA, CO, CT, DC, DE, FL, GA, HI, IA, ID, IL, IN, KS, KY, " +
     "LA, MA, MD, ME, MI, MN, MO, MS, MT, NC, ND, NE, NH, NJ, NM, NV, NY, " +
     "OH, OK, OR, PA, RI, SC, SD, TN, TX, UT, VA, VT, WA, WI, WV, WY, ";
-  
+
   /**
    * Constant string describing US Army.
    */
@@ -140,19 +139,19 @@ public class StatesValidator extends StringValidator {
    */
   protected static final String STR_STATES_US_TERRITORIES =
     "AS, GU, MP, PR, PW, VI, ";
-  
+
   /**
    * Constant string describing Canada provinces.
    */
   protected static final String STR_STATES_CANADA =
     "AB, BC, MB, NB, NF, NS, NT, ON, PE, PQ, SK, YT, ";
-  
+
   /**
    * Constant string describing outside US/Canada regions.
    */
   protected static final String STR_STATES_OTHER =
     "XX, ";
-  
+
 
   /**
    * Region property map.
@@ -167,14 +166,14 @@ public class StatesValidator extends StringValidator {
    */
   public StatesValidator() {
     super();
-    
+
     stateTypes = new PropertyMap();
     stateTypes.put(KEY_STATES_USA, new BooleanProperty("allowUsa", 4, Property.DEFAULT, true));
     stateTypes.put(KEY_STATES_US_ARMY, new BooleanProperty("allowUsArmy", 4, Property.DEFAULT, true));
     stateTypes.put(KEY_STATES_US_TERRITORIES, new BooleanProperty("allowUsTerritories", 4, Property.DEFAULT, true));
     stateTypes.put(KEY_STATES_CANADA, new BooleanProperty("allowCanada", 4, Property.DEFAULT, true));
     stateTypes.put(KEY_STATES_OTHER, new BooleanProperty("allowOther", 4, Property.DEFAULT, true));
-    
+
     configStateTypes();
 
     ignoreCase.setValue(true);
@@ -194,7 +193,7 @@ public class StatesValidator extends StringValidator {
 
   /**
    * @param value flag for allowing US Army places.
-   */  
+   */
   public void setAllowUsArmy(boolean value) {
     setAllowStateType(KEY_STATES_US_ARMY, value);
   }
@@ -218,7 +217,7 @@ public class StatesValidator extends StringValidator {
   public void setAllowOther(boolean value) {
     setAllowStateType(KEY_STATES_OTHER, value);
   }
-  
+
 
   // Protected methods
 

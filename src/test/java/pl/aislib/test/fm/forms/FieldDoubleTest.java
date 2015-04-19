@@ -4,14 +4,13 @@ import pl.aislib.fm.forms.ValidateException;
 
 /**
  * Class for testing double number fields.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.5 $
  */
 public class FieldDoubleTest extends FieldTestAbstract {
 
   // Constructors
-  
+
   /**
    * @see junit.framework.TestCase#TestCase(java.lang.String)
    */
@@ -21,7 +20,7 @@ public class FieldDoubleTest extends FieldTestAbstract {
 
 
   // Protected methods
-  
+
   /**
    * @see pl.aislib.test.fm.forms.FieldTestAbstract#getFormName()
    */
@@ -31,7 +30,7 @@ public class FieldDoubleTest extends FieldTestAbstract {
 
 
   // Test methods
-  
+
   /**
    * field_001: Zero double.
    * @throws ValidateException if test failed.
@@ -162,10 +161,10 @@ public class FieldDoubleTest extends FieldTestAbstract {
 
   /**
    * field_001: Invalid double.
-   */  
+   */
   public void test007Bad() {
     field = form.getField("field_001");
-    
+
     try {
       validateField("1a");
       fail(MSG_001);
@@ -176,10 +175,10 @@ public class FieldDoubleTest extends FieldTestAbstract {
 
   /**
    * field_001_locale: Invalid double.
-   */  
+   */
   public void test007LocaleBad() {
     field = form.getField("field_001_locale");
-    
+
     try {
       validateField("1a");
       fail(MSG_001);
@@ -250,10 +249,10 @@ public class FieldDoubleTest extends FieldTestAbstract {
 
   /**
    * field_002: Double less than start range.
-   */  
+   */
   public void test011Bad() {
     field = form.getField("field_002");
-    
+
     try {
       validateField("-2.5");
       fail(MSG_001);
@@ -264,10 +263,10 @@ public class FieldDoubleTest extends FieldTestAbstract {
 
   /**
    * field_002_locale: Double less than start range.
-   */  
+   */
   public void test011LocaleBad() {
     field = form.getField("field_002_locale");
-    
+
     try {
       validateField("-2,5");
       fail(MSG_001);
@@ -278,10 +277,10 @@ public class FieldDoubleTest extends FieldTestAbstract {
 
   /**
    * field_002: Double greater than end range.
-   */  
+   */
   public void test012Bad() {
     field = form.getField("field_002");
-    
+
     try {
       validateField("4");
       fail(MSG_001);
@@ -292,10 +291,10 @@ public class FieldDoubleTest extends FieldTestAbstract {
 
   /**
    * field_002_locale: Double greater than end range.
-   */  
+   */
   public void test012LocaleBad() {
     field = form.getField("field_002_locale");
-    
+
     try {
       validateField("4");
       fail(MSG_001);

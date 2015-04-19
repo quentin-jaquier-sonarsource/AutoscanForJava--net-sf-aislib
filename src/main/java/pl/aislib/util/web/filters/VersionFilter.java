@@ -28,7 +28,6 @@ import javax.servlet.http.HttpServletResponse;
  * name (with <code>package.</code> substracked) as name.
  *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.5 $
  */
 public class VersionFilter extends AbstractHttpFilter {
 

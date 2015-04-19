@@ -6,7 +6,6 @@ import pl.aislib.fm.PageInfo;
  * Test global triggers handling in {@link pl.aislib.fm.Controller}
  *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.4 $
  */
 public class Controller2Test extends AbstractControllerTest {
 

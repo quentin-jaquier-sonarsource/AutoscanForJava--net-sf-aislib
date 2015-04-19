@@ -4,9 +4,8 @@ import org.apache.commons.logging.Log;
 
 /**
  * Provide base implementation of {@link ShepherdsDog}.
- * 
+ *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.1 $
  */
 public abstract class AbstractShepherdsDog implements ShepherdsDog {
 

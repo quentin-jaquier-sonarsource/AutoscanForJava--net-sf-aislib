@@ -16,7 +16,6 @@ import pl.aislib.fm.forms.ConditionalRule;
  *
  * @author Tomasz Pik, AIS.PL
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.2 $
  */
 public class EqualityRule extends ConditionalRule {
 

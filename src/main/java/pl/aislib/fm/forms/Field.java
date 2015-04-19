@@ -15,7 +15,6 @@ import pl.aislib.util.validators.AbstractValidator;
  *   <tr><td>Michal Jastak, AIS.PL</td></tr>
  *   <tr><td>Wojciech Swiatek, AIS.PL</td></tr>
  * </table>
- * @version $Revision: 1.6 $
  * @since AISLIB 0.1
  */
 public class Field implements IField, IEntity {

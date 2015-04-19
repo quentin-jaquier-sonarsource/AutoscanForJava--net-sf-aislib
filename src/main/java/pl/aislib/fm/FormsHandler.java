@@ -13,9 +13,8 @@ import pl.aislib.fm.forms.config.Handler;
 
 /**
  * XML handler for handling framework's forms.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.2 $
  */
 public class FormsHandler extends Handler {
 
@@ -31,7 +30,7 @@ public class FormsHandler extends Handler {
 
 
   // Constructors
-  
+
   /**
    * @see pl.aislib.fm.forms.config.Handler#Handler(Log)
    */

@@ -4,16 +4,15 @@ import pl.aislib.fm.forms.ValidateException;
 
 /**
  * Zip code validation class.
- * 
+ *
  * <p>
  * Implemented additional properties:
  * <ul>
  *   <li><code>allowExtended</code></li>
  *   <li><code>allowNormal</code></li>
  * </ul>
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.4 $
  */
 public class ZipValidator
   extends StringValidator {
@@ -36,7 +35,7 @@ public class ZipValidator
 
 
   // Constructors
-  
+
   /**
    * Base constructor.
    */
@@ -47,9 +46,9 @@ public class ZipValidator
     zipTypes = new PropertyMap();
     zipTypes.put(KEY_ZIP_NORMAL, new BooleanProperty("allowExtended", 4, Property.DEFAULT, true));
     zipTypes.put(KEY_ZIP_EXTENDED, new BooleanProperty("allowNormal", 4, Property.DEFAULT, true));
-    
+
     configZipTypes();
-    
+
     allowedChars.addType(Property.FINAL);
     minimumLength.addType(Property.FINAL);
     maximumLength.addType(Property.FINAL);
@@ -57,7 +56,7 @@ public class ZipValidator
 
 
   // Public validation methods
-  
+
   /**
    * @see pl.aislib.util.validators.Validator#validateObject
    */
@@ -74,21 +73,21 @@ public class ZipValidator
 
   /**
    * @param value flag for allowing extended zip code.
-   */  
+   */
   public void setAllowExtended(boolean value) {
     setAllowZipType(KEY_ZIP_EXTENDED, value);
   }
-  
+
   /**
    * @param value flag for allowing 5-digit zip code.
    */
   public void setAllowNormal(boolean value) {
     setAllowZipType(KEY_ZIP_NORMAL, value);
   }
-  
+
 
   // Protected check methods
-  
+
   /**
    * @param value a string to be checked.
    * @return true if the string is a zip code.
@@ -118,7 +117,7 @@ public class ZipValidator
         }
       } else {
         // Length is 10
-        
+
         // There should be a dash
         if (indDash == -1) {
           return false;
@@ -141,7 +140,7 @@ public class ZipValidator
 
 
   // Protected methods
-  
+
   /**
    * Configure zip code types.
    */

@@ -19,7 +19,6 @@ import java.math.BigDecimal;
  *
  * @author Tomasz Pik, AIS.PL
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.11 $
  */
 public class BigDecimalValidator extends NumberValidator {
 

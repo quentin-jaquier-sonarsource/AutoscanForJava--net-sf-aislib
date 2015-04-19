@@ -4,14 +4,13 @@ import pl.aislib.fm.forms.ValidateException;
 
 /**
  * Phone validation class.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.2 $
  */
 public class PhoneValidator extends StringValidator {
 
   // Constructors
-  
+
   /**
    * Base constructor.
    */
@@ -24,7 +23,7 @@ public class PhoneValidator extends StringValidator {
 
 
   // Public property methods
-  
+
   /**
    * @param value a format string.
    */
@@ -35,14 +34,14 @@ public class PhoneValidator extends StringValidator {
 
 
   // Protected methods
-  
+
   /**
    * Phone configuration.
    */
   protected void configFormat() {
     String strFormat    = (String) format.getValue();
     int    formatLength = strFormat.length();
-    
+
     minimumLength.setValue(formatLength);
     maximumLength.setValue(formatLength);
 
@@ -59,14 +58,14 @@ public class PhoneValidator extends StringValidator {
     }
     allowedChars.setValue(sAllowedChars);
   }
-  
+
   /**
    * @see pl.aislib.util.validators.StringValidator#formatString
    */
   protected Object formatString(String value) throws Exception {
     String strFormat    = (String) format.getValue();
     int    formatLength = strFormat.length();
-    
+
     for (int i = 0; i < formatLength; i++) {
       char fc = strFormat.charAt(i);
       char vc = value.charAt(i);
@@ -78,8 +77,8 @@ public class PhoneValidator extends StringValidator {
         throw new ValidateException("Invalid phone number format.");
       }
     }
-    
+
     return value;
   }
-    
+
 } // PhoneValidator class

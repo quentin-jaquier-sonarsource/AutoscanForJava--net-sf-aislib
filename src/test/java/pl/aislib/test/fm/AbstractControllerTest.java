@@ -29,7 +29,6 @@ import pl.aislib.util.xml.XMLUtils;
  * Base class for test cases of {@link pl.aislib.fm.Controller}.
  *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.9 $
  */
 public abstract class AbstractControllerTest extends TestCase {
 

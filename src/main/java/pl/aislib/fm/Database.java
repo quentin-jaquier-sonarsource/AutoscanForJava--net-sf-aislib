@@ -10,9 +10,8 @@ import pl.aislib.fm.jdbc.Manager;
 
 /**
  * Core implementation of database object.
- * 
+ *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.4 $
  * @since AISLIB 0.1
  */
 public class Database {
@@ -29,7 +28,7 @@ public class Database {
 
 
   // Constructors
-  
+
   /**
    * @param _manager <code>Manager</code> implementation object.
    */
@@ -40,10 +39,10 @@ public class Database {
 
 
   // Public methods
-  
+
   /**
    * Gets wrapped <code>Manager</code> instance used to operate with database connections.
-   * 
+   *
    * @return manager used by the database.
    */
   public Manager getManager() {
@@ -52,7 +51,7 @@ public class Database {
 
   /**
    * Gets {@link Connection} from {@link Manager#getConnection()}.
-   * 
+   *
    * @return Connection from {@link Manager#getConnection()}.
    * @throws SQLException throws by called method.
    */
@@ -62,7 +61,7 @@ public class Database {
 
   /**
    * Passes {@link Connection} to {@link Manager#releaseConnection(Connection)}.
-   * 
+   *
    * @param con which should be passed to {@link Manager#getConnection()}.
    * @throws SQLException thrown by called method.
    */
@@ -72,7 +71,7 @@ public class Database {
 
 
   // Package methods
-  
+
   /**
    * @param _log logging object.
    */
@@ -83,10 +82,10 @@ public class Database {
 
 
   // Private classes
-  
+
   /**
    * Wrapper of manager logging information about connections.
-   * 
+   *
    * @author Tomasz Pik, AIS.PL
    */
   private class LoggedManager extends Manager {
@@ -95,12 +94,12 @@ public class Database {
      * Manager to trace.
      */
     private Manager manager;
-    
+
     /**
      * Logging object.
      */
     private Log log;
-    
+
     /**
      * Number of current connections.
      */
@@ -108,7 +107,7 @@ public class Database {
 
 
     // Constructors
-    
+
     /**
      * @param _manager manager to trace.
      * @param _log logging object.
@@ -118,17 +117,17 @@ public class Database {
       log     = _log;
       counter = 0;
     }
-    
-    
+
+
     // Public methods
-    
+
     /**
      * @param _log logging object.
      */
     public void setLog(Log _log) {
       log = _log;
     }
-    
+
     /**
      * @see pl.aislib.fm.jdbc.Manager#getConnection()
      */
@@ -147,7 +146,7 @@ public class Database {
 
     /**
      * @see pl.aislib.fm.jdbc.Manager#releaseConnection(java.sql.Connection)
-     */ 
+     */
     public void releaseConnection(Connection con) throws SQLException {
       if (log.isTraceEnabled()) {
         log.trace("release connection " + counter);

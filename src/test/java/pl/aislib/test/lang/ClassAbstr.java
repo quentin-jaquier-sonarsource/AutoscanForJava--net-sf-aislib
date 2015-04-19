@@ -6,13 +6,12 @@ package pl.aislib.test.lang;
  * This class is abstract.
  *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.1 $
  */
 
 public abstract class ClassAbstr {
 
   /**
-   * 
+   *
    */
   public ClassAbstr() {
     super();

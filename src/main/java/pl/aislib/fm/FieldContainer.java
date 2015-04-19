@@ -37,7 +37,6 @@ import pl.aislib.util.messages.StandardMessageConverter;
  * </ul>
  *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.18 $
  */
 public abstract class FieldContainer {
 

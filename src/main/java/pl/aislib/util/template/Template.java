@@ -6,10 +6,9 @@ import java.io.OutputStream;
 import java.util.Map;
 
 /**
- * Interface represents dynamic ouptut.
+ * Interface represents dynamic output.
  *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.2 $
  */
 public interface Template {
 
@@ -30,7 +29,7 @@ public interface Template {
 
   /**
    * Process template content and write result to stream.
-   * 
+   *
    * @param stream for write result of template processing.
    * @throws IOException in case of problems.
    */

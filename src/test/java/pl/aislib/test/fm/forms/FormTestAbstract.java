@@ -24,7 +24,6 @@ import pl.aislib.util.xml.XMLUtils;
  * Abstract class for testing forms.
  *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.8 $
  */
 public abstract class FormTestAbstract extends TestCase implements IConstants {
 

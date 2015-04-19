@@ -6,7 +6,6 @@ import pl.aislib.fm.PageInfo;
  * Testing <code>session-expiration</code> attributes.
  *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.1 $
  */
 public class Controller3Test extends AbstractControllerTest {
 

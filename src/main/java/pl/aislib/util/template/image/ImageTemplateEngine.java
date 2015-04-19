@@ -32,7 +32,6 @@ import java.awt.image.PixelGrabber;
  *  Phone: +47 2 230539<br>
  *  sverrehu@ifi.uio.no
  * </center>
- * @version $Revision: 1.1.1.1 $
  * @author Tomasz Pik, AIS.PL
  * @since AISLIB 0.4
  */
@@ -101,30 +100,30 @@ public class ImageTemplateEngine extends ImageTemplateProducer implements ImageT
     private short width, height;
     private int numColors;
     private byte pixels[], colors[];
-    
+
     /**
      * Construct a GIFEncoder. The constructor will convert the image to
      * an indexed color array. <B>This may take some time.</B><P>
-     * 
+     *
      * @param image The image to encode. The image <B>must</B> be
      * completely loaded.
      */
     GIFEncoder(Image image) {
       width = (short) image.getWidth(null);
       height = (short) image.getHeight(null);
-      
+
       int values[] = new int[width * height];
       PixelGrabber grabber = new PixelGrabber(
           image, 0, 0, width, height, values, 0, width);
-      
+
       try {
         if (grabber.grabPixels() != true) {
           throw new RuntimeException("Grabber returned false: " + grabber.status());
         }
-      } catch (InterruptedException e) { 
+      } catch (InterruptedException e) {
         ;
       }
-      
+
       byte r[][] = new byte[width][height];
       byte g[][] = new byte[width][height];
       byte b[][] = new byte[width][height];
@@ -133,13 +132,13 @@ public class ImageTemplateEngine extends ImageTemplateProducer implements ImageT
         for (int x = 0; x < width; ++x) {
           r[x][y] = (byte) ((values[index] >> 16) & 0xFF);
           g[x][y] = (byte) ((values[index] >> 8) & 0xFF);
-          b[x][y] = (byte) ((values[index]) & 0xFF);  
+          b[x][y] = (byte) ((values[index]) & 0xFF);
           ++index;
         }
       }
       toIndexedColor(r, g, b);
     }
-    
+
     /**
      * Construct a GIFEncoder. The constructor will convert the image to
      * an indexed color array. <B>This may take some time.</B><P>
@@ -158,10 +157,10 @@ public class ImageTemplateEngine extends ImageTemplateProducer implements ImageT
     GIFEncoder(byte r[][], byte g[][], byte b[][]) {
       width = (short) (r.length);
       height = (short) (r[0].length);
-      
+
       toIndexedColor(r, g, b);
     }
-    
+
     /**
      * Writes the image out to a stream in the GIF file format. This will
      * be a single GIF87a image, non-interlaced, with no background color.
@@ -174,29 +173,29 @@ public class ImageTemplateEngine extends ImageTemplateProducer implements ImageT
      * */
     void write(OutputStream output) throws IOException {
       BitUtils.writeString(output, "GIF87a");
-      
+
       ScreenDescriptor sd = new ScreenDescriptor(width, height, numColors);
       sd.write(output);
-      
+
       output.write(colors, 0, colors.length);
-      
+
       ImageDescriptor id = new ImageDescriptor(width, height, ',');
       id.write(output);
-      
+
       byte codesize = BitUtils.bitsNeeded(numColors);
       if (codesize == 1) {
         ++codesize;
       }
       output.write(codesize);
-      
+
       LZWCompressor.doLZWCompress(output, codesize, pixels);
       output.write(0);
-      
+
       id = new ImageDescriptor((byte) 0, (byte) 0, ';');
       id.write(output);
       output.flush();
     }
-    
+
     void toIndexedColor(byte r[][], byte g[][], byte b[][]) {
       pixels = new byte[width * height];
       colors = new byte[256 * 3];
@@ -211,13 +210,13 @@ public class ImageTemplateEngine extends ImageTemplateProducer implements ImageT
               break;
             }
           }
-          
+
           if (search > 255) {
             throw new RuntimeException("Too many colors.");
           }
-          
+
           pixels[y * width + x] = (byte) search;
-          
+
           if (search == colornum) {
             colors[search * 3]     = r[x][y];
             colors[search * 3 + 1] = g[x][y];
@@ -255,7 +254,7 @@ public class ImageTemplateEngine extends ImageTemplateProducer implements ImageT
         bitsLeft = 8;
       }
     }
-    
+
     public void writeBits(int bits, int numbits) throws IOException {
       int bitsWritten = 0;
       int numBytes = 255;
@@ -263,12 +262,12 @@ public class ImageTemplateEngine extends ImageTemplateProducer implements ImageT
         if ((index == 254 && bitsLeft == 0) || index > 254) {
           output.write(numBytes);
           output.write(buffer, 0, numBytes);
-          
+
           buffer[0] = 0;
           index = 0;
           bitsLeft = 8;
         }
-        
+
         if (numbits <= bitsLeft) {
           buffer[index] |= (bits & ((1 << numbits) - 1)) << (8 - bitsLeft);
           bitsWritten += numbits;
@@ -285,7 +284,7 @@ public class ImageTemplateEngine extends ImageTemplateProducer implements ImageT
       } while (numbits != 0);
     }
   }
-  
+
   private static class LZWStringTable {
     private static final int RES_CODES = 2;
     private static final short HASH_FREE = (short) 0xFFFF;
@@ -294,44 +293,44 @@ public class ImageTemplateEngine extends ImageTemplateProducer implements ImageT
     private static final int MAXSTR = (1 << MAXBITS);
     private static final short HASHSIZE = 9973;
     private static final short HASHSTEP = 2039;
-    
+
     private byte strChr[];
     private short strNxt[];
     private short strHsh[];
     private short numStrings;
-    
+
     LZWStringTable() {
       strChr = new byte[MAXSTR];
       strNxt = new short[MAXSTR];
-      strHsh = new short[HASHSIZE];    
+      strHsh = new short[HASHSIZE];
     }
-    
+
     int addCharString(short index, byte b) {
       int hshidx;
-      
+
       if (numStrings >= MAXSTR) {
         return 0xFFFF;
       }
-      
+
       hshidx = hash(index, b);
       while (strHsh[hshidx] != HASH_FREE) {
         hshidx = (hshidx + HASHSTEP) % HASHSIZE;
       }
-      
+
       strHsh[hshidx] = numStrings;
       strChr[numStrings] = b;
       strNxt[numStrings] = (index != HASH_FREE) ? index : NEXT_FIRST;
-      
+
       return numStrings++;
     }
-    
+
     short findCharString(short index, byte b) {
       int hshidx, nxtidx;
-      
+
       if (index == HASH_FREE) {
         return b;
       }
-      
+
       hshidx = hash(index, b);
       while ((nxtidx = strHsh[hshidx]) != HASH_FREE) {
         if (strNxt[nxtidx] == index && strChr[nxtidx] == b) {
@@ -339,49 +338,49 @@ public class ImageTemplateEngine extends ImageTemplateProducer implements ImageT
         }
         hshidx = (hshidx + HASHSTEP) % HASHSIZE;
       }
-      
+
       return (short) 0xFFFF;
     }
-    
+
     void clearTable(int codesize) {
       numStrings = 0;
-      
+
       for (int q = 0; q < HASHSIZE; q++) {
         strHsh[q] = HASH_FREE;
       }
-      
+
       int w = (1 << codesize) + RES_CODES;
       for (int q = 0; q < w; q++) {
         addCharString((short) 0xFFFF, (byte) q);
       }
     }
-    
+
     static int hash(short index, byte lastbyte) {
       return ((int) ((short) (lastbyte << 8) ^ index) & 0xFFFF) % HASHSIZE;
     }
   }
-  
+
   private static class LZWCompressor {
-    
+
     static void doLZWCompress(OutputStream output, int codesize, byte toCompress[]) throws IOException {
       byte c;
       short index;
       int clearcode, endofinfo, numbits, limit;
       //int  errcode;
       short prefix = (short) 0xFFFF;
-      
+
       BitFile bitFile = new BitFile(output);
       LZWStringTable strings = new LZWStringTable();
-      
+
       clearcode = 1 << codesize;
       endofinfo = clearcode + 1;
-      
+
       numbits = codesize + 1;
       limit = (1 << numbits) - 1;
-      
+
       strings.clearTable(codesize);
       bitFile.writeBits(clearcode, numbits);
-      
+
       for (int loop = 0; loop < toCompress.length; ++loop) {
         c = toCompress[loop];
         if ((index = strings.findCharString(prefix, c)) != -1) {
@@ -396,11 +395,11 @@ public class ImageTemplateEngine extends ImageTemplateProducer implements ImageT
             }
             limit = (1 << numbits) - 1;
           }
-          
+
           prefix = (short) ((short) c & 0xFF);
         }
       }
-      
+
       if (prefix != -1) {
         bitFile.writeBits(prefix, numbits);
       }
@@ -408,12 +407,12 @@ public class ImageTemplateEngine extends ImageTemplateProducer implements ImageT
       bitFile.flush();
     }
   }
-  
+
   private class ScreenDescriptor {
     private short localScreenWidth, localScreenHeight;
     private byte byteVar;
     private byte backgroundColorIndex, pixelAspectRatio;
-    
+
     ScreenDescriptor(short width, short height, int numColors) {
       localScreenWidth = width;
       localScreenHeight = height;
@@ -424,7 +423,7 @@ public class ImageTemplateEngine extends ImageTemplateProducer implements ImageT
       backgroundColorIndex = 0;
       pixelAspectRatio = 0;
     }
-    
+
     void write(OutputStream output) throws IOException {
       BitUtils.writeWord(output, localScreenWidth);
       BitUtils.writeWord(output, localScreenHeight);
@@ -432,29 +431,29 @@ public class ImageTemplateEngine extends ImageTemplateProducer implements ImageT
       output.write(backgroundColorIndex);
       output.write(pixelAspectRatio);
     }
-    
+
     void setGlobalColorTableSize(byte num) {
       byteVar |= (num & 7);
     }
-    
+
     void setSortFlag(byte num) {
       byteVar |= (num & 1) << 3;
     }
-    
+
     void setColorResolution(byte num) {
       byteVar |= (num & 7) << 4;
     }
-    
+
     void setGlobalColorTableFlag(byte num) {
       byteVar |= (num & 1) << 7;
     }
   }
-  
+
   private class ImageDescriptor {
     private byte separator;
     private short leftPosition, topPosition, width, height;
     private byte byteVar;
-    
+
     ImageDescriptor(short width, short height, char separator) {
       this.separator = (byte) separator;
       leftPosition = 0;
@@ -467,7 +466,7 @@ public class ImageTemplateEngine extends ImageTemplateProducer implements ImageT
       setInterlaceFlag((byte) 0);
       setLocalColorTableFlag((byte) 0);
     }
-    
+
     void write(OutputStream output) throws IOException {
       output.write(separator);
       BitUtils.writeWord(output, leftPosition);
@@ -476,23 +475,23 @@ public class ImageTemplateEngine extends ImageTemplateProducer implements ImageT
       BitUtils.writeWord(output, height);
       output.write(byteVar);
     }
-    
+
     void setLocalColorTableSize(byte num) {
       byteVar |= (num & 7);
     }
-    
+
     void setReserved(byte num) {
       byteVar |= (num & 3) << 3;
     }
-    
+
     void setSortFlag(byte num) {
       byteVar |= (num & 1) << 5;
     }
-    
+
     void setInterlaceFlag(byte num) {
       byteVar |= (num & 1) << 6;
     }
-  
+
     void setLocalColorTableFlag(byte num) {
       byteVar |= (num & 1) << 7;
     }
@@ -501,23 +500,23 @@ public class ImageTemplateEngine extends ImageTemplateProducer implements ImageT
   private static class BitUtils {
     static byte bitsNeeded(int n) {
       byte ret = 1;
-      
+
       if (n-- == 0) {
         return 0;
       }
-      
+
       while ((n >>= 1) != 0) {
         ++ret;
       }
-    
+
       return ret;
-    }    
-    
+    }
+
     static void writeWord(OutputStream output, short w) throws IOException {
       output.write(w & 0xFF);
       output.write((w >> 8) & 0xFF);
     }
-    
+
     static void writeString(OutputStream output, String string) throws IOException {
       for (int loop = 0; loop < string.length(); ++loop) {
         output.write((byte) (string.charAt(loop)));

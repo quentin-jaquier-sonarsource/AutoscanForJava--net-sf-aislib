@@ -28,8 +28,6 @@ import javax.servlet.http.HttpServletResponse;
  * <font color='red'>Work in progress</font>
  *
  * @author Tomasz Sandecki, AIS.PL
- * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.1 $
  */
 public class BrowserServlet extends HttpServlet {
   static final String STYLE_URL = "style_url";

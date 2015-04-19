@@ -28,7 +28,6 @@ import pl.aislib.util.jdbc.JNDIManager;
  * @author Andrzej Luszczyk, AIS.PL
  * @author Tomasz Pik, AIS.PL
  * @author Bartosz Belcik, AIS.PL
- * @version $Revision: 1.4 $
  */
 public class ConnectionCheckerFilter implements Filter {
 

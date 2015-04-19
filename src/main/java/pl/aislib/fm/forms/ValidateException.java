@@ -8,7 +8,6 @@ package pl.aislib.fm.forms;
  *   <tr><td>Tomasz Pik, AIS.PL</td></tr>
  *   <tr><td>Wojciech Swiatek, AIS.PL</td></tr>
  * </table>
- * @version $Revision: 1.4 $
  * @since AISLIB 0.1
  */
 public class ValidateException extends Exception {

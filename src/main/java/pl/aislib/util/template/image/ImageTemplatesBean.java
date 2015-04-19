@@ -19,7 +19,6 @@ import pl.aislib.util.template.TemplateFont;
  * loading itself from XML InputStream.
  *
  * @author Daniel Rychcik, AIS.PL
- * @version $Revision: 1.2 $
  */
 public class ImageTemplatesBean {
 

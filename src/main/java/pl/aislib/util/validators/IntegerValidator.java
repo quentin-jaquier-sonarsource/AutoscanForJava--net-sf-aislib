@@ -5,14 +5,13 @@ import java.text.Format;
 
 /**
  * Integer number validation class.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.4 $
  */
 public class IntegerValidator extends NumberValidator {
 
   // Constructors
-  
+
   /**
    * Base constructor.
    */
@@ -22,7 +21,7 @@ public class IntegerValidator extends NumberValidator {
 
 
   // Protected check methods
-  
+
   /**
    * @see pl.aislib.util.validators.RangeValidator#checkRange
    */
@@ -42,22 +41,22 @@ public class IntegerValidator extends NumberValidator {
 
 
   // Protected methods
-  
+
   /**
    * @see pl.aislib.util.validators.StringValidator#convertObject
    */
   protected Object convertObject(String value) {
     Integer result = null;
-  
+
     try {
       result = new Integer(parseNumber(value).intValue());
     } catch (Exception e) {
       ;
     }
-    
+
     return result;
   }
-    
+
   /**
    * @see pl.aislib.util.validators.StringValidator#formatString
    */
@@ -65,7 +64,7 @@ public class IntegerValidator extends NumberValidator {
     Integer result = new Integer(parseNumber(value).intValue());
     return result;
   }
-    
+
   /**
    * @see pl.aislib.util.validators.NumberValidator#getDecimalFormat()
    */

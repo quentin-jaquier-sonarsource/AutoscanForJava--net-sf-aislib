@@ -6,7 +6,6 @@ import pl.aislib.fm.forms.ValidateException;
  * Class for testing Social Security Number (SSN) fields.
  *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.6 $
  */
 public class FieldSSNTest extends FieldTestAbstract {
 

@@ -5,11 +5,10 @@ import junit.framework.TestCase;
 
 /**
  * Tests {@link Pair} class implementation.
- * 
+ *
  * Tests {@link Pair} class implementation, especially {@link Pair#equals(Object)} method.
- * 
+ *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.2 $
  */
 public class PairTest extends TestCase {
 
@@ -43,7 +42,7 @@ public class PairTest extends TestCase {
     notNullAndNull1 = new Pair("left", null);
     notNullAndNull2 = new Pair("left", null);
     notNullAndNull3 = new Pair("LEFT", null);
-    
+
     notNullAndNotNull1 = new Pair("left", "right");
     notNullAndNotNull2 = new Pair("left", "right");
     notNullAndNotNull3 = new Pair("LEFT", "RIGHT");
@@ -93,5 +92,5 @@ public class PairTest extends TestCase {
     assertFalse(nullAndNull1.equals(notNullAndNotNull1));
     assertFalse(nullAndNotNull1.equals(notNullAndNull1));
     assertFalse(nullAndNotNull1.equals(notNullAndNotNull1));
-  } 
+  }
 }

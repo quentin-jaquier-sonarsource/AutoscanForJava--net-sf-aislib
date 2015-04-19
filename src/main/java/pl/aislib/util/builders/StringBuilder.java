@@ -15,7 +15,6 @@ import pl.aislib.fm.forms.FieldBuilder;
  * </ul>
  *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.1 $
  */
 public class StringBuilder extends FieldBuilder {
 

@@ -4,14 +4,13 @@ import pl.aislib.fm.forms.ValidateException;
 
 /**
  * Class for testing email fields.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.5 $
  */
 public class FieldEmailTest extends FieldTestAbstract {
 
   // Constructors
-  
+
   /**
    * @see junit.framework.TestCase#TestCase(java.lang.String)
    */
@@ -21,7 +20,7 @@ public class FieldEmailTest extends FieldTestAbstract {
 
 
   // Protected methods
-  
+
   /**
    * @see pl.aislib.test.fm.forms.FieldTestAbstract#getFormName()
    */
@@ -31,14 +30,14 @@ public class FieldEmailTest extends FieldTestAbstract {
 
 
   // Test methods
-  
+
   /**
    * field_001: Valid email.
    * @throws ValidateException if test failed.
    */
   public void test001Ok() throws ValidateException {
     field = form.getField("field_001");
-    
+
     validateField("john@ais.pl");
   }
 
@@ -48,17 +47,17 @@ public class FieldEmailTest extends FieldTestAbstract {
    */
   public void test002Ok() throws ValidateException {
     field = form.getField("field_001");
-    
+
     validateField("a.b@c.d");
   }
-  
+
   /**
    * field_001: Valid email.
    * @throws ValidateException if test failed.
    */
   public void test003Ok() throws ValidateException {
     field = form.getField("field_001");
-    
+
     validateField("a@a.a");
   }
 
@@ -67,7 +66,7 @@ public class FieldEmailTest extends FieldTestAbstract {
    */
   public void test004Bad() {
     field = form.getField("field_001");
-    
+
     try {
       validateField("");
       fail(MSG_001);
@@ -75,13 +74,13 @@ public class FieldEmailTest extends FieldTestAbstract {
       checkErrorCode(1);
     }
   }
-  
+
   /**
    * field_001: String too short for email.
    */
   public void test005Bad() {
     field = form.getField("field_001");
-    
+
     try {
       validateField("a");
       fail(MSG_001);
@@ -95,7 +94,7 @@ public class FieldEmailTest extends FieldTestAbstract {
    */
   public void test006Bad() {
     field = form.getField("field_001");
-    
+
     try {
       validateField("@a.b");
       fail(MSG_001);

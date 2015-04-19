@@ -6,7 +6,6 @@ import java.util.Set;
 /**
  * Class describing Attribute with enumerated allowed values.
  * @author Michal Jastak
- * @version $Revision: 1.1.1.1 $
  * @since AISLIB 0.1
  */
 public class EnumeratedAttribute extends AbstractHTMLAttribute {
@@ -28,7 +27,7 @@ public class EnumeratedAttribute extends AbstractHTMLAttribute {
    * Adds new value to those allowed for this attribute.
    */
   public void addAllowedValue(Object value) {
-    allowedValues.add(value); 
+    allowedValues.add(value);
   }
 
   /**
@@ -37,17 +36,17 @@ public class EnumeratedAttribute extends AbstractHTMLAttribute {
    * @return true if it is allowed to set such a value, false otherwise
    */
   public boolean isAllowed(Object value) {
-    return allowedValues.contains(value); 
+    return allowedValues.contains(value);
   }
 
   /**
    * Sets value for this attribute, checking if it is allowed first.
    * @param value new attribute value
-   * @throws AttributeValueNotAllowedException if this value is not allowed 
+   * @throws AttributeValueNotAllowedException if this value is not allowed
    */
   public void setValue(Object value) throws InvalidAttributeValueException {
     if (!isAllowed(value)) {
-      throw new AttributeValueNotAllowedException("Attribute '" + attributeName + "' doesn't allow '" + value 
+      throw new AttributeValueNotAllowedException("Attribute '" + attributeName + "' doesn't allow '" + value
                                                  + "' as value");
     }
     super.setValue(value);

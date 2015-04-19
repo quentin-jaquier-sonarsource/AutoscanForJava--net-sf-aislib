@@ -5,14 +5,13 @@ import java.text.Format;
 
 /**
  * Long number validation class.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.4 $
  */
 public class LongValidator extends NumberValidator {
 
   // Constructors
-  
+
   /**
    * Base constructor.
    */
@@ -22,7 +21,7 @@ public class LongValidator extends NumberValidator {
 
 
   // Protected check methods
-  
+
   /**
    * @see pl.aislib.util.validators.RangeValidator#checkRange
    */
@@ -48,16 +47,16 @@ public class LongValidator extends NumberValidator {
    */
   protected Object convertObject(String value) {
     Long result = null;
-  
+
     try {
       result = new Long(parseNumber(value).longValue());
     } catch (Exception e) {
       ;
     }
-    
+
     return result;
   }
-    
+
   /**
    * @see pl.aislib.util.validators.StringValidator#formatString
    */
@@ -65,7 +64,7 @@ public class LongValidator extends NumberValidator {
     Long result = new Long(parseNumber(value).longValue());
     return result;
   }
-  
+
   /**
    * @see pl.aislib.util.validators.NumberValidator#getDecimalFormat()
    */

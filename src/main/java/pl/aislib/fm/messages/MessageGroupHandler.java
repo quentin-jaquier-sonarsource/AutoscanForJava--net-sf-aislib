@@ -12,7 +12,6 @@ import pl.aislib.fm.forms.config.PartialHandler;
 
 /**
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.3 $
  */
 public class MessageGroupHandler extends PartialHandler {
 
@@ -20,12 +19,12 @@ public class MessageGroupHandler extends PartialHandler {
    * Group of messages being used.
    */
   protected List currentMessageGroup;
-  
+
   /**
    * Group code of messages being used.
    */
   protected Integer currentMessageGroupCode;
-  
+
   /**
    * Message reference being used.
    */
@@ -33,7 +32,7 @@ public class MessageGroupHandler extends PartialHandler {
 
 
   // Constructors
-  
+
   /**
    * @param parentHandler <code>Handler</code> object.
    */
@@ -64,7 +63,7 @@ public class MessageGroupHandler extends PartialHandler {
       return;
     }
     if ("message-ref".equals(localName)) {
-      currentObject = currentMessageRef = processMessageRef(atts); 
+      currentObject = currentMessageRef = processMessageRef(atts);
       return;
     }
   }
@@ -84,7 +83,7 @@ public class MessageGroupHandler extends PartialHandler {
    * @param atts <code>Attributes</code> object.
    * @return group of messages.
    * @throws SAXException if an error occurs in parsing.
-   */  
+   */
   protected List processMessageGroup(Attributes atts) throws SAXException {
     try {
       currentMessageGroupCode = Integer.valueOf(atts.getValue("code"));
@@ -93,7 +92,7 @@ public class MessageGroupHandler extends PartialHandler {
     }
     return new ArrayList();
   }
-  
+
   /**
    * @param atts <code>Attributes</code> object.
    * @return message reference.

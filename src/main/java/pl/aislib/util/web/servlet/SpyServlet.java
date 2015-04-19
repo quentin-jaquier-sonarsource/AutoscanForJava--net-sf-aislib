@@ -31,7 +31,6 @@ import pl.aislib.util.web.servlet.BaseServlet;
  * Servlet for monitoring servlet engine, environment and http session.
  *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.5 $
  */
 public class SpyServlet extends BaseServlet {
 

@@ -4,9 +4,8 @@ import java.io.Serializable;
 
 /**
  * Small but useful class of pairs of objects.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.2 $
  */
 public final class Pair implements Serializable {
 
@@ -72,7 +71,7 @@ public final class Pair implements Serializable {
    * Checks if two objects are equals.
    *
    * Checks if two objects are equals. Assume, that <code>null == null</code>.
-   * 
+   *
    * @param o1 object to compare.
    * @param o2 object to compare.
    * @return <code>true</code> if both arguments are null or equal, <code>false</code> otherwise.
@@ -88,7 +87,7 @@ public final class Pair implements Serializable {
         return o1.equals(o2);
       }
     } else {
-      return false;     
+      return false;
     }
   }
 }

@@ -17,7 +17,6 @@ import pl.aislib.fm.jdbc.Manager;
  * Implementation based on container-driven <code>DataSource</code>.
  *
  * @author Tomasz Pik
- * @version $Revision: 1.2 $
  */
 public class JNDIManager extends Manager implements Serializable {
 

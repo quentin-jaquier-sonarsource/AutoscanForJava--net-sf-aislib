@@ -2,20 +2,19 @@ package pl.aislib.text.html.render;
 
 /**
  * Implements {@link OptionRenderer} using Flyweight pattern.
- * 
+ *
  * <p>Subclasses of this class are not thread safe.</p>
  * <p>Implementation of this class relly on order, that
  * <code>ListRenderer</code> calls <code>OptionRenderer</code>
  * methods. This is documented <a href='ListRenderer.html#order'>here</a>.</p>
- * 
+ *
  * <p>Following sequence of method calls is used during renering:
  * <pre>
  *   getValue(Object object) calls setObject(object) and getValue())
  *   getContent(Object object) calls getContent()
  * </pre>
- * 
+ *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.1.1.1 $
  * @since AISLIB 0.5
  */
 public abstract class FlyweightOptionRenderer implements OptionRenderer {
@@ -45,7 +44,7 @@ public abstract class FlyweightOptionRenderer implements OptionRenderer {
 
   /**
    * Sets <code>object</code> which will be rendered.
-   * 
+   *
    * @param object object to set
    */
   public abstract void setObject(Object object);
@@ -54,7 +53,7 @@ public abstract class FlyweightOptionRenderer implements OptionRenderer {
    * @return <em>HTML Option</em> value attribute
    */
   protected abstract String getValue();
-  
+
   /**
    * @return <em>HTML Option</em> content
    */

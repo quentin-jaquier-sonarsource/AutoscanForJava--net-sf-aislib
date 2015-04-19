@@ -21,7 +21,6 @@ import pl.aislib.util.web.filters.VersionFilter;
 
 /**
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.2 $
  */
 public class VersionFilterTest extends TestCase {
 

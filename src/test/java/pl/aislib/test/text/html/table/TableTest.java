@@ -7,8 +7,7 @@ import pl.aislib.text.html.table.Table;
 import pl.aislib.text.html.attrs.AttributeException;
 
 /**
- * @author Micha³ Ja¶tak
- * @version $Revision: 1.1.1.1 $
+ * @author Michal Jastak
  */
 public class TableTest extends TestCase {
 
@@ -39,7 +38,7 @@ public class TableTest extends TestCase {
     }
   }
 
-} // class 
+} // class
 
 /**
  * $Log: TableTest.java,v $

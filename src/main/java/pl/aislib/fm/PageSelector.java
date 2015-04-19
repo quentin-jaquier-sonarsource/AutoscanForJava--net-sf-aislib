@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServletRequest;
  * Selecting page code based on request.
  *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.1 $
  */
 public interface PageSelector {
 

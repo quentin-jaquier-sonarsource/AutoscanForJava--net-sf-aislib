@@ -4,7 +4,6 @@ import java.util.Vector;
 
 /**
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.1 $
  */
 class TaskListenerSupport {
 
@@ -27,11 +26,11 @@ class TaskListenerSupport {
     synchronized (this) {
       l = (Vector) taskListeners.clone();
     }
-                 
+
     for (int i = 0; i < l.size(); ++i) {
       TaskListener task = (TaskListener) l.elementAt(i);
-      if (task instanceof ExtendedTaskListener) {      
-        ((ExtendedTaskListener) task).taskNotify(object);  
+      if (task instanceof ExtendedTaskListener) {
+        ((ExtendedTaskListener) task).taskNotify(object);
       }
     }
   }
@@ -41,7 +40,7 @@ class TaskListenerSupport {
     synchronized (this) {
       l = (Vector) taskListeners.clone();
     }
-    
+
     for (int i = 0; i < l.size(); ++i) {
       TaskListener task = (TaskListener) l.elementAt(i);
       if (task instanceof ExtendedTaskListener) {
@@ -60,7 +59,7 @@ class TaskListenerSupport {
     synchronized (this) {
       l = (Vector) taskListeners.clone();
     }
-    
+
     for (int i = 0; i < l.size(); ++i) {
       TaskListener task = (TaskListener) l.elementAt(i);
       task.taskFailed(e);
@@ -77,7 +76,7 @@ class TaskListenerSupport {
     synchronized (this) {
       l = (Vector) taskListeners.clone();
     }
-    
+
     for (int i = 0; i < l.size(); ++i) {
       TaskListener task = (TaskListener) l.elementAt(i);
       task.taskFinished(result);
@@ -92,7 +91,7 @@ class TaskListenerSupport {
     synchronized (this) {
       l = (Vector) taskListeners.clone();
     }
-    
+
     for (int i = 0; i < l.size(); ++i) {
       TaskListener task = (TaskListener) l.elementAt(i);
       task.taskStarted();

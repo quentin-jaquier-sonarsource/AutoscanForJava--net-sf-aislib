@@ -10,7 +10,6 @@ import org.apache.commons.logging.Log;
  * Main controller of application.
  *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.5 $
  */
 public class Controller {
 

@@ -5,15 +5,14 @@ import pl.aislib.lang.EncapsulatedException;
 /**
  * Generic exception class throwed by {@link Application} initialization methods.
  * This exception encapsulates real problem cause description.
- *  
+ *
  * @author Michal Jastak, AIS.PL
- * @version $Revision: 1.2 $
  * @since AISLIB 0.1
  */
 public class ApplicationConfigurationException extends EncapsulatedException {
 
   // Constructors
-  
+
   /**
    * Constructs a new exception.
    */

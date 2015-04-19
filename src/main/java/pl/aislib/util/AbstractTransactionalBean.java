@@ -11,13 +11,12 @@ import org.apache.commons.beanutils.BeanUtils;
 /**
  * @author Tomasz Pik, AIS.PL
  * @author Michal Jastak, AIS.PL
- * @version $Revision: 1.2 $
  */
 public abstract class AbstractTransactionalBean implements Serializable {
 
   private Stack history;
   private Set   stateChanges;
-  
+
   private static final Null NULL = new Null();
 
   /**
@@ -83,7 +82,7 @@ public abstract class AbstractTransactionalBean implements Serializable {
   private class PropertyChange {
     private String propertyName;
     private Object propertyValue;
-    
+
     /**
      *
      */
@@ -91,28 +90,28 @@ public abstract class AbstractTransactionalBean implements Serializable {
       this.propertyName  = propertyName;
       this.propertyValue = propertyValue;
     }
-    
+
     /**
      *
      */
     Object getValue() {
       return propertyValue;
     }
-    
+
     /**
      *
      */
     String propertyName() {
       return propertyName;
     }
-    
+
     /**
      *
      */
     public int hashCode() {
       return ("PropertyChange " + propertyName).hashCode();
     }
-    
+
     /**
      *
      */
@@ -138,7 +137,7 @@ public abstract class AbstractTransactionalBean implements Serializable {
    *
    */
   private static final class Null {
-    
+
     /**
      *
      */
@@ -147,4 +146,4 @@ public abstract class AbstractTransactionalBean implements Serializable {
     }
   } // class Null
 
-} // class 
+} // class

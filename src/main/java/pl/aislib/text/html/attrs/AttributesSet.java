@@ -7,7 +7,6 @@ import java.util.Map;
 /**
  * Class holding set of attributes.
  * @author Michal Jastak
- * @version $Revision: 1.1.1.1 $
  * @since AISLIB 0.1
  * @see AbstractHTMLAttribute
  */

@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.MalformedURLException;
 
-import org.apache.commons.collections.ExtendedProperties; 
+import org.apache.commons.collections.ExtendedProperties;
 
 import org.apache.velocity.runtime.resource.Resource;
 import org.apache.velocity.runtime.resource.loader.ResourceLoader;
@@ -17,7 +17,6 @@ import org.apache.velocity.exception.ResourceNotFoundException;
  * ResourceLoader for loading templates from URLs.
  *
  * @author Daniel Rychcik
- * @version 0.1
  * @since 0.2
  */
 public class URLResourceLoader extends ResourceLoader {

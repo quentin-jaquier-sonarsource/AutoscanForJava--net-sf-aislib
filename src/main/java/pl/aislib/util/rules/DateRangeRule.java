@@ -16,7 +16,6 @@ import pl.aislib.fm.forms.ConditionalRule;
  * </ul>
  *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.3 $
  */
 public class DateRangeRule extends ConditionalRule {
 

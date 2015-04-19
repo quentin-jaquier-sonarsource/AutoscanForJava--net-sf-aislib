@@ -13,7 +13,6 @@ import pl.aislib.util.xml.JarEntityResolver;
  * supported by aislib configuration formats.
  *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.2 $
  */
 public class FmEntityResolver {
 

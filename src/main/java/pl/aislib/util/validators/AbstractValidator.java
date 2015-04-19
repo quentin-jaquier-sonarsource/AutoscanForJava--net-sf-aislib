@@ -29,7 +29,6 @@ import pl.aislib.fm.forms.ValidateException;
  * This allows for assigning e.g. "en_US", "en_UK" in a single property.
  *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.8 $
  */
 public abstract class AbstractValidator implements BaseValidator {
 

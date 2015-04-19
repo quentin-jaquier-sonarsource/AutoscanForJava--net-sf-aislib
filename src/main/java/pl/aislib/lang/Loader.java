@@ -17,7 +17,6 @@ import org.apache.commons.logging.LogFactory;
  * level to report resource loading operations.</p>
  *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.5 $
  * @since AISLIB 0.4
  */
 public class Loader {

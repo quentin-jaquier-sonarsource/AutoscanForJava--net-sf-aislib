@@ -10,16 +10,15 @@ import pl.aislib.fm.forms.ValidateException;
 
 /**
  * Date validation class.
- * 
+ *
  * <p>
  * Implemented additional properties:
  * <ul>
  *   <li><code>allowFuture</code></li>
  *   <li><code>allowPast</code></li>
  * </ul>
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.3 $
  */
 public class DateValidator extends RangeValidator {
 
@@ -43,7 +42,7 @@ public class DateValidator extends RangeValidator {
     super();
 
     format.setValue("yyyy/MM/dd");
-    
+
     allowPast = new BooleanProperty("allowPast", 5, Property.DEFAULT, true);
     allowFuture = new BooleanProperty("allowFuture", 5, Property.DEFAULT, true);
   }
@@ -56,11 +55,11 @@ public class DateValidator extends RangeValidator {
    */
   public void validateObject(Object value) throws ValidateException {
     super.validateObject(value);
-    
+
     if (checkProperty(allowPast) && !checkPast(value)) {
       throw new ValidateException("Value is before current date.");
     }
-    
+
     if (checkProperty(allowFuture) && !checkFuture(value)) {
       throw new ValidateException("Value is after current date.");
     }
@@ -68,14 +67,14 @@ public class DateValidator extends RangeValidator {
 
 
   // Public property methods
-  
+
   /**
    * @param value true if date should be checked against current date.
    */
   public void setAllowPast(boolean value) {
     allowPast.set(value);
   }
-  
+
   /**
    * @param value true if date should be checked against current date.
    */
@@ -95,10 +94,10 @@ public class DateValidator extends RangeValidator {
       return true;
     }
     Date dValue = (Date) value;
-    
+
     Date dCurrent = null;
     Calendar cal = Calendar.getInstance();
-    
+
     try {
       SimpleDateFormat sdf = new SimpleDateFormat((String) format.getValue(), locale);
       sdf.setLenient(false);
@@ -120,10 +119,10 @@ public class DateValidator extends RangeValidator {
       return true;
     }
     Date dValue = (Date) value;
-    
+
     Date dCurrent = null;
     Calendar cal = Calendar.getInstance();
-    
+
     try {
       SimpleDateFormat sdf = new SimpleDateFormat((String) format.getValue(), locale);
       sdf.setLenient(false);
@@ -135,7 +134,7 @@ public class DateValidator extends RangeValidator {
 
     return !(dValue.after(dCurrent));
   }
-  
+
   /**
    * @see RangeValidator#checkRange
    */
@@ -150,11 +149,11 @@ public class DateValidator extends RangeValidator {
     if (dEndRange != null && dValue.after(dEndRange)) {
       return false;
     }
-    
+
     return true;
-  }  
-  
-  
+  }
+
+
   // Protected methods
 
   /**
@@ -162,17 +161,17 @@ public class DateValidator extends RangeValidator {
    */
   protected Object convertObject(String value) {
     Date dRange = null;
-  
+
     try {
       SimpleDateFormat sdf = new SimpleDateFormat((String) format.getValue(), locale);
       dRange = sdf.parse(value);
     } catch (Exception e) {
       ;
     }
-    
+
     return dRange;
   }
-    
+
   /**
    * @see pl.aislib.util.validators.StringValidator#formatString
    */

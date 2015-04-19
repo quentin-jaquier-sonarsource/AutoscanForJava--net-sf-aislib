@@ -20,11 +20,10 @@ import pl.aislib.text.html.attrs.CDataAttribute;
  * </ul>
  * See {@link CDataAttribute} for <code>cite</code>.
  * @author Michal Jastak
- * @version $Revision: 1.1.1.1 $
  * @since AISLIB 0.1
  */
 public class Font extends AbstractHTMLObject {
-  
+
   /**
    *
    */

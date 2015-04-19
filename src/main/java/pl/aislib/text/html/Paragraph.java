@@ -16,11 +16,10 @@ import pl.aislib.text.html.attrs.EventsAttributesSet;
  * <li>any content</li>
  * </ul>
  * @author Michal Jastak
- * @version $Revision: 1.1.1.1 $
  * @since AISLIB 0.1
  */
 public class Paragraph extends AbstractHTMLObject {
-  
+
   /**
    *
    */

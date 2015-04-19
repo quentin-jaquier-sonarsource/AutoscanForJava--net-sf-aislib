@@ -6,7 +6,7 @@ import pl.aislib.fm.forms.ValidateException;
 
 /**
  * URL validation class.
- * 
+ *
  * <p>
  * Implemented additional properties:
  * <ul>
@@ -15,13 +15,12 @@ import pl.aislib.fm.forms.ValidateException;
  *   <li><code>allowFtp</code></li>
  *   <li><code>allowFile</code></li>
  * </ul>
- *  
+ *
  * @author
  * <table>
  *   <tr><td>Tomasz Pik, AIS.PL</td></tr>
  *   <tr><td>Wojciech Swiatek, AIS.PL</td></tr>
  * </table>
- * @version $Revision: 1.5 $
  */
 public class URLValidator extends StringValidator {
 
@@ -29,12 +28,12 @@ public class URLValidator extends StringValidator {
    * Constant describing http URL.
    */
   protected static final String KEY_URL_PROTOCOL_HTTP = "http";
-  
+
   /**
    * Constant describing https URL.
    */
   protected static final String KEY_URL_PROTOCOL_HTTPS = "https";
-  
+
   /**
    * Constant describing ftp URL.
    */
@@ -44,7 +43,7 @@ public class URLValidator extends StringValidator {
    * Constant describing file URL.
    */
   protected static final String KEY_URL_PROTOCOL_FILE = "file";
-  
+
 
   /**
    * URL type property map.
@@ -53,7 +52,7 @@ public class URLValidator extends StringValidator {
 
 
   // Constructors
-  
+
   /**
    * Base constructor.
    */
@@ -74,17 +73,17 @@ public class URLValidator extends StringValidator {
    * @see pl.aislib.util.validators.Validator#toObject
    */
   public Object toObject(String value) throws ValidateException {
-      
+
     URL url = null;
     try {
       url = new URL(value);
     } catch (Exception e) {
       return null;
     }
-      
+
     return url;
   }
-  
+
   /**
    * @see pl.aislib.util.validators.Validator#validateObject
    */
@@ -98,7 +97,7 @@ public class URLValidator extends StringValidator {
 
 
   // Public property methods
-  
+
   /**
    * @param value flag for allowing http protocol.
    */
@@ -129,25 +128,25 @@ public class URLValidator extends StringValidator {
 
 
   // Protected check methods
-  
+
   /**
    * @param value an URL object.
    * @return true if URL uses valid protocol.
    */
   protected boolean checkProtocol(URL value) {
     String protocol = value.getProtocol();
-    
+
     BooleanProperty protocolType = (BooleanProperty) protocolTypes.get(protocol);
     if (protocolType == null) {
       return false;
     }
-    
+
     return protocolType.isTrue();
   }
 
 
   // Protected methods
-  
+
   /**
    * @param protocolType type of protocol.
    * @param allow flag for allowing entering URL with the protocol of the type.
@@ -156,5 +155,5 @@ public class URLValidator extends StringValidator {
     BooleanProperty property = (BooleanProperty) protocolTypes.getProperty(protocolType);
     property.set(allow);
   }
-  
+
 } // URLValidator class

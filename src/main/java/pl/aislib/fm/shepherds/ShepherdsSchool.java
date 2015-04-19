@@ -15,7 +15,6 @@ import pl.aislib.lang.Loader;
 /**
  * Defines how Shepherds are trained.
  * @author Michal Jastak
- * @version $Revision: 1.6 $
  * @since AISLIB 0.4
  * @see Shepherd
  * @see ShepherdsDog
@@ -47,14 +46,14 @@ public class ShepherdsSchool {
   }
 
   /**
-   * Creates new Shepherd. 
-   * <p>New <code>Shepherd</code> is created using <code>Predicate</code>, <code>dogsBreed</code> 
+   * Creates new Shepherd.
+   * <p>New <code>Shepherd</code> is created using <code>Predicate</code>, <code>dogsBreed</code>
    * and <code>pageRef</code> (see {@link Shepherd} class description). <br />
    * <code>Predicate</code> mentioned above is created by instatiating class found in following way:
    * <ul>
-   *   <li>given <code>predicateName</code> is checked against known predicate names, if found, 
+   *   <li>given <code>predicateName</code> is checked against known predicate names, if found,
    *   Class corresponding to it is used for constructing new <code>Predicate</code> object,</li>
-   *   <li>unknown <code>predicateName</code> is treated as some Class name and used for 
+   *   <li>unknown <code>predicateName</code> is treated as some Class name and used for
    *   constructing new <code>Predicate</code> object</li>
    * </ul></p>
    * <p>Well known predicates are listed below, their names may be used as <code>predicateName</code>.
@@ -101,7 +100,7 @@ public class ShepherdsSchool {
     ShepherdsDog    shepherdsDog       = school.newShepherdsDog(dogsBreed);
     String          predicateClassName = school.getPredicateClassName(predicateName);
 
-    Class clazz = Loader.findClass(predicateClassName); 
+    Class clazz = Loader.findClass(predicateClassName);
     Constructor constructor = clazz.getConstructor(new Class[0]);
     predicate = (Predicate) constructor.newInstance(new Object[0]);
     shepherdsDog.setWatchedProperty(propertyName);
@@ -138,7 +137,7 @@ public class ShepherdsSchool {
     }
     if (result == null) {
       result = new DogWatchingHttpRequestParameters();
-    } 
+    }
     return result;
   }
 

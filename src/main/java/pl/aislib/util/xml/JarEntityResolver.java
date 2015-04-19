@@ -21,7 +21,6 @@ import pl.aislib.lang.Loader;
  * By default, <code>pl.aislib.util.xml</code> log category is used.
  *
  * @author Michal Jastak
- * @version $Revision: 1.3 $
  * @since AISLIB 0.1
  * @see <a href='http://jakarta.apache.org/commons/logging.html'>Jakarta Commons Logging Component</a>
  */

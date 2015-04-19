@@ -4,7 +4,6 @@ package pl.aislib.test.fm.forms;
  * Class for testing dynamic string fields.
  *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.5 $
  */
 public class FieldStringDynamicTest extends FieldTestAbstract {
 

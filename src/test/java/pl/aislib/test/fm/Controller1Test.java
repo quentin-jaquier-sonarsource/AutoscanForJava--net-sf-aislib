@@ -6,7 +6,6 @@ import pl.aislib.fm.PageInfo;
  * Test basic funcionality of {@link pl.aislib.fm.Controller}.
  *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.6 $
  */
 public class Controller1Test extends AbstractControllerTest {
 

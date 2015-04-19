@@ -11,7 +11,6 @@ import org.apache.commons.logging.Log;
  *
  * @author Tomasz Pik
  * @author Michal Jastak
- * @version $Revision: 1.3 $
  * @since AISLIB 0.1
  * @see <a href='http://jakarta.apache.org/commons/logging.html'>Jakarta Commons Logging Component</a>
  */

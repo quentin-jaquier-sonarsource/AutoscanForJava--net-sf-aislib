@@ -10,7 +10,6 @@ import org.apache.commons.logging.Log;
  *
  * @author Tomasz Pik
  * @author Michal Jastak
- * @version $Revision: 1.3 $
  * @since AISLIB 0.4
  * @see <a href='http://jakarta.apache.org/commons/logging.html'>Jakarta Commons Logging Component</a>
  */
@@ -44,7 +43,7 @@ public class LogErrorListener implements ErrorListener {
   /**
    * Modifies class behaviour on errors, see {@link LogErrorHandler#allErrorsAreFatal}
    *
-   * @param allErrorsAreFatal flag describing new behaviour 
+   * @param allErrorsAreFatal flag describing new behaviour
    */
   public void setAllErrorsAreFatal(boolean allErrorsAreFatal) {
     this.allErrorsAreFatal = allErrorsAreFatal;
@@ -70,10 +69,10 @@ public class LogErrorListener implements ErrorListener {
       throw te;
     }
   }
- 
+
   /**
    * Receive notification of a non-recoverable error.
-   * 
+   *
    * Sends appropriate message to log storage (as <code>fatal</code>)
    * and stops document parsing definitely.
    *
@@ -86,7 +85,7 @@ public class LogErrorListener implements ErrorListener {
     }
     throw te;
   }
- 
+
   /**
    * Receive notification of a warning.
    *

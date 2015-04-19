@@ -2,9 +2,8 @@ package pl.aislib.util.validators;
 
 /**
  * Credit card validation class.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.2 $
  */
 public class CreditCardValidator extends StringValidator {
 
@@ -22,5 +21,5 @@ public class CreditCardValidator extends StringValidator {
     maximumLength.setValue(17);
     allowedChars.setValue("0123456789");
   }
-    
+
 } // CreditCardValidator class

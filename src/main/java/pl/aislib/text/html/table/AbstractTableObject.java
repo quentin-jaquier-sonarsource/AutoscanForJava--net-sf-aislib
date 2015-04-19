@@ -18,7 +18,6 @@ import pl.aislib.text.html.attrs.EventsAttributesSet;
  * </ul>
  * </p>
  * @author Michal Jastak
- * @version $Revision: 1.1.1.1 $
  * @see CoreAttributesSet
  * @see EventsAttributesSet
  * @since AISLIB 0.2

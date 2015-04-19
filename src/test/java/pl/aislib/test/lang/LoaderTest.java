@@ -12,9 +12,8 @@ import junit.framework.TestCase;
 
 /**
  * TestCase for {@link Loader} class.
- * 
+ *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.4 $
  */
 public class LoaderTest extends TestCase {
 

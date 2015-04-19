@@ -12,7 +12,6 @@ import pl.aislib.fm.forms.config.PartialHandler;
 
 /**
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.2 $
  */
 public class MessageHandler extends PartialHandler {
 
@@ -20,12 +19,12 @@ public class MessageHandler extends PartialHandler {
    * Message type being used.
    */
   protected int currentMessageType;
-  
+
   /**
    * Message code being used.
    */
   protected Integer currentMessageCode;
-  
+
   /**
    * Message key being used.
    */
@@ -35,20 +34,20 @@ public class MessageHandler extends PartialHandler {
    * Map of contents being used.
    */
   protected Map currentContentItems;
-  
+
   /**
    * Content's language being used.
    */
   protected String currentContentLanguage;
-  
+
   /**
    * Default language.
    */
   protected String defaultLanguage;
-  
+
 
   // Constructors
-  
+
   /**
    * @param parentHandler <code>Handler</code> object.
    */
@@ -88,7 +87,7 @@ public class MessageHandler extends PartialHandler {
       return;
     }
     if ("key".equals(localName)) {
-      currentObject = currentKey = processKey(atts); 
+      currentObject = currentKey = processKey(atts);
       return;
     }
     if ("content".equals(localName)) {
@@ -127,7 +126,7 @@ public class MessageHandler extends PartialHandler {
         defaultLanguage
       );
   }
-  
+
   /**
    * @param atts <code>Attributes</code> object.
    * @return identification code for a message.
@@ -148,14 +147,14 @@ public class MessageHandler extends PartialHandler {
     }
 
     currentContentItems = new HashMap();
-    
+
     String language = atts.getValue("lang");
     if (language != null) {
       defaultLanguage = language;
     } else {
       defaultLanguage = ((MessagesHandler) parentHandler).getDefaultLanguage();
     }
-    
+
     return currentMessageCode;
   }
 
@@ -163,11 +162,11 @@ public class MessageHandler extends PartialHandler {
    * @param atts <code>Attributes</code> object.
    * @return key for a message, as <code>StringBuffer</code> object.
    * @throws SAXException if an error occurs while parsing.
-   */  
+   */
   protected StringBuffer processKey(Attributes atts) throws SAXException {
     return (currentBuffer = new StringBuffer());
   }
-  
+
   /**
    * @param atts <code>Attributes</code> object.
    * @return single message content, as <code>StringBuffer</code> object.

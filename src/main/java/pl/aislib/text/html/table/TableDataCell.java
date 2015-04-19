@@ -9,7 +9,6 @@ package pl.aislib.text.html.table;
  * </ul>
  * </p>
  * @author Michal Jastak
- * @version $Revision: 1.1.1.1 $
  * @since AISLIB 0.2
  */
 public class TableDataCell extends AbstractTableCellObject {

@@ -7,7 +7,7 @@ import java.text.ParsePosition;
 
 /**
  * Number validation class.
- * 
+ *
  * <p>
  * It uses conversion from strings to doubles.
  * <br>
@@ -15,9 +15,8 @@ import java.text.ParsePosition;
  * <ul>
  *   <li><code>groupingSeparator</code></li>
  * </ul>
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.6 $
  */
 public class NumberValidator extends RangeValidator {
 
@@ -28,7 +27,7 @@ public class NumberValidator extends RangeValidator {
 
 
   // Constructors
-  
+
   /**
    * Base constructor.
    */
@@ -48,7 +47,7 @@ public class NumberValidator extends RangeValidator {
     super.setFormat(value);
     NumberFormatHelper.applyLocalizedPattern(decimalFormat, value);
   }
-  
+
   /**
    * @see pl.aislib.util.validators.AbstractValidator#setLocale(java.lang.String)
    */
@@ -59,7 +58,7 @@ public class NumberValidator extends RangeValidator {
 
   /**
    * @param value grouping separator.
-   */  
+   */
   public void setGroupingSeparator(String value) {
     char gsOld = NumberFormatHelper.setGroupingSeparator(decimalFormat, value.charAt(0));
     format.setValue(format.getValue().toString().replace(gsOld, value.charAt(0)));
@@ -68,7 +67,7 @@ public class NumberValidator extends RangeValidator {
 
 
   // Protected check methods
-  
+
   /**
    * @see RangeValidator#checkRange(Object)
    */
@@ -83,7 +82,7 @@ public class NumberValidator extends RangeValidator {
     if (dEndRange != null && dValue.compareTo(dEndRange) > 0) {
       return false;
     }
-    
+
     return true;
   }
 
@@ -95,16 +94,16 @@ public class NumberValidator extends RangeValidator {
    */
   protected Object convertObject(String value) {
     Double result = null;
-  
+
     try {
       result = new Double(parseNumber(value).doubleValue());
     } catch (Exception e) {
       ;
     }
-    
+
     return result;
   }
-    
+
   /**
    * @see StringValidator#formatString(String)
    */
@@ -129,7 +128,7 @@ public class NumberValidator extends RangeValidator {
 
   /**
    * @return new instance of decimal format.
-   */  
+   */
   protected Format getDecimalFormat() {
     NumberFormat result = NumberFormat.getInstance(locale);
     if (result instanceof DecimalFormat) {

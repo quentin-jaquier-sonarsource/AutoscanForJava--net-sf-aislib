@@ -5,9 +5,8 @@ import java.io.IOException;
 
 /**
  * Interface represens dynamic output which may be treat as <code>String</code>.
- * 
+ *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.2 $
  */
 public interface StringTemplate extends Template {
 

@@ -12,9 +12,8 @@ import org.xml.sax.helpers.DefaultHandler;
 
 /**
  * Main XML Handler class.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.4 $
  */
 public abstract class Handler extends DefaultHandler implements IXMLHandler {
 
@@ -45,7 +44,7 @@ public abstract class Handler extends DefaultHandler implements IXMLHandler {
 
 
   // Constructors
-  
+
   /**
    * @param log logging object.
    */

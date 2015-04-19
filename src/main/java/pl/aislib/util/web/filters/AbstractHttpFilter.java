@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
  * Base class for http-aware filters.
  *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.1 $
  */
 public abstract class AbstractHttpFilter implements Filter {
 

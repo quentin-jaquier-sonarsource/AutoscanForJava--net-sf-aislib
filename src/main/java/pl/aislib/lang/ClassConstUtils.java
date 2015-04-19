@@ -7,7 +7,6 @@ import java.util.Map;
 
 /**
  * @author Tomasz Sandecki, AIS.PL
- * @version $Revision: 1.3 $
  */
 public class ClassConstUtils {
   /**

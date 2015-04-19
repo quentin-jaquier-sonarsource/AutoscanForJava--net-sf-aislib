@@ -8,26 +8,25 @@ import pl.aislib.util.messages.MessageFormatConverter;
 
 /**
  * Abstract class for testing rules.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.6 $
  */
 public abstract class RuleTestAbstract extends FormTestAbstract {
 
   // Constructors
-  
+
   /**
    * @see junit.framework.TestCase#TestCase(java.lang.String)
    */
   public RuleTestAbstract(String name) throws Exception {
     super(name);
-    
+
     form = forms.getForm(getFormName(), null, null, null);
   }
 
 
   // Protected methods
-  
+
   /**
    * @see pl.aislib.test.fm.forms.FormTestAbstract#getFormsConfigurationFileName()
    */
@@ -53,7 +52,7 @@ public abstract class RuleTestAbstract extends FormTestAbstract {
    * @return name of the form.
    */
   protected abstract String getFormName();
-  
+
   /**
    *
    */

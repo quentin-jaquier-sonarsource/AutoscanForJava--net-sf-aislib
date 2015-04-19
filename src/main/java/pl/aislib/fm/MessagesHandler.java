@@ -17,9 +17,8 @@ import pl.aislib.fm.messages.MessageHandler;
 
 /**
  * XML handler for handling framework's messages.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.3 $
  */
 public class MessagesHandler extends Handler {
 
@@ -27,12 +26,12 @@ public class MessagesHandler extends Handler {
    * Map of messages.
    */
   protected Map messages;
-  
+
   /**
    * Map of groups of messages.
    */
   protected Map messageGroups;
-  
+
   /**
    * Default language for messages.
    */
@@ -40,13 +39,13 @@ public class MessagesHandler extends Handler {
 
 
   // Constructors
-  
+
   /**
    * @param log logging object.
    */
   public MessagesHandler(Log log) {
     super(log);
-    
+
     messages = new HashMap();
     messageGroups = new HashMap();
   }
@@ -59,7 +58,7 @@ public class MessagesHandler extends Handler {
    */
   public void processEndElement(String namespaceURI, String localName, String qName) throws SAXException {
   }
-  
+
   /**
    * @see pl.aislib.fm.forms.config.IXMLHandler#processStartElement(String, String, String, Attributes)
    */
@@ -101,7 +100,7 @@ public class MessagesHandler extends Handler {
   public Map cloneMessages() {
     return new HashMap(messages);
   }
-  
+
   /**
    * @return a copy of map of group of messages.
    */
@@ -124,7 +123,7 @@ public class MessagesHandler extends Handler {
     Object obj = messages.get(new Integer(messageCode));
     return obj != null ? (IMessage) obj : null;
   }
-  
+
   /**
    * @param messageCode identification code for a message.
    * @return the message with content in default language.
@@ -132,7 +131,7 @@ public class MessagesHandler extends Handler {
   public Message getMessage(int messageCode) {
     return getMessage(messageCode, defaultLanguage);
   }
-  
+
   /**
    * @param messageCode identification code for a message.
    * @param language language in which the message should be given.
@@ -145,7 +144,7 @@ public class MessagesHandler extends Handler {
     }
     return new Message(message.getCode(), message.getKey(), message.getContent(language), language);
   }
-  
+
   /**
    * @param messageGroupCode group code for messages.
    * @return group of messages.
@@ -154,8 +153,8 @@ public class MessagesHandler extends Handler {
     Object obj = messageGroups.get(new Integer(messageGroupCode));
     return obj != null ? (List) obj : null;
   }
-  
-  
+
+
   // Protected methods
 
   /**

@@ -4,16 +4,15 @@ import pl.aislib.fm.forms.ValidateException;
 
 /**
  * Social Security Number (SSN) validation class.
- * 
+ *
  * <p>
  * Implemented additional properties:
  * <ul>
  *   <li><code>allowNormal</code></li>
  *   <li><code>allowShort</code></li>
  * </ul>
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.5 $
  */
 public class SSNValidator extends StringValidator {
 
@@ -21,7 +20,7 @@ public class SSNValidator extends StringValidator {
    * Constant describing normal SSN type (the one with dashes).
    */
   protected static final String KEY_SSN_DASHES = "normal";
-  
+
   /**
    * Constant describing short SSN type (the one without dashes).
    */
@@ -35,7 +34,7 @@ public class SSNValidator extends StringValidator {
 
 
   // Constructors
-      
+
   /**
    * Base constructor.
    */
@@ -56,7 +55,7 @@ public class SSNValidator extends StringValidator {
 
 
   // Public validation methods
-  
+
   /**
    * @see pl.aislib.util.validators.Validator#validateObject
    */
@@ -73,11 +72,11 @@ public class SSNValidator extends StringValidator {
 
   /**
    * @param value flag for allowing dashes in SSN.
-   */  
+   */
   public void setAllowNormal(boolean value) {
     setAllowSsnType(KEY_SSN_DASHES, value);
   }
-  
+
   /**
    * @param value flag for allowing no dashes in SSN.
    */
@@ -96,13 +95,13 @@ public class SSNValidator extends StringValidator {
     if (value == null) {
       return false;
     }
-    
+
     boolean bNormal = ((BooleanProperty) ssnTypes.getProperty(KEY_SSN_DASHES)).isTrue();
     boolean bShort  = ((BooleanProperty) ssnTypes.getProperty(KEY_SSN_NO_DASHES)).isTrue();
     boolean bBoth   = bNormal && bShort;
-    
+
     int valueLength = value.length();
-    
+
     if (bNormal || bBoth) {
       // SSN must be 9 or 11 characters long, if validating both types
       if (bBoth && valueLength != 9 && valueLength != 11) {
@@ -127,7 +126,7 @@ public class SSNValidator extends StringValidator {
           if (indDash1 == indDash2) {
             return false;
           }
-        
+
           // Dashes should be in appropriate places
           if (indDash1 != 3 || indDash2 != 6) {
             return false;
@@ -145,12 +144,12 @@ public class SSNValidator extends StringValidator {
         }
       }
     }
-      
+
     return true;
   }
 
 
-  // Protected methods  
+  // Protected methods
 
   /**
    * Configure SSN types.
@@ -178,7 +177,7 @@ public class SSNValidator extends StringValidator {
       // At least one property must have a truth value
     }
   }
-  
+
   /**
    * @param ssnType a type of SSN: with or without dashes.
    * @param allow flag for allowing entering the type of SSN.

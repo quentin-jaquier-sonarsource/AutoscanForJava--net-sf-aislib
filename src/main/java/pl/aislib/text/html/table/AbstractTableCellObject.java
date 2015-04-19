@@ -30,8 +30,7 @@ import pl.aislib.text.html.attrs.EnumeratedAttribute;
  * <li>any content</li>
  * </ul>
  * </p>
- * @author Michal³Jastak
- * @version $Revision: 1.1.1.1 $
+ * @author Michal Jastak
  * @since AISLIB 0.2
  */
 class AbstractTableCellObject extends AbstractTableObject {

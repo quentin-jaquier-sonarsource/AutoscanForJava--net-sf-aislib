@@ -36,11 +36,11 @@ import pl.aislib.text.html.attrs.EventsAttributesSet;
  *     <li>value</li>
  *   </ul>
  * </li>
- * <li>any content</li> 
+ * <li>any content</li>
  * </ul>
  * </p>
+ *
  * @author Michal Jastak
- * @version $Revision: 1.1.1.1 $
  * @see CoreAttributesSet
  * @see EventsAttributesSet
  * @since AISLIB 0.2

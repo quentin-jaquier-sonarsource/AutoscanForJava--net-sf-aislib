@@ -4,13 +4,12 @@ import pl.aislib.util.AbstractTransactionalBean;
 
 /**
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.1.1.1 $
  */
 public class TransactionalBean extends AbstractTransactionalBean {
 
   private String name;
   private Integer age;
-  
+
   public void setName(String name) {
     firePropertyChange("name", getName(), name);
     this.name = name;

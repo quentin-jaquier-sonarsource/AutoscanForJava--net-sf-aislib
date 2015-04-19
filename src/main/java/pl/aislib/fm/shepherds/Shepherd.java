@@ -4,19 +4,18 @@ import org.apache.commons.collections.Predicate;
 import org.apache.commons.logging.Log;
 
 /**
- * Minds the sheeps (usually {@link javax.servlet.http.HttpServletRequest} objects) 
+ * Minds the sheeps (usually {@link javax.servlet.http.HttpServletRequest} objects)
  * on the Pasture ({@link pl.aislib.fm.Application}).
  * <p>Shepherd uses given <code>Predicate</code> object for controlling
  * <code>Application</code> state and flow between pages. <br />
  * In other words: Shepherds are used by <code>Application</code> during user request dispatching between pages. <br />
  * During this process, <code>Application</code> asks all Shepherds registered (in <code>PageInfo</code> object)
- * for specific <code>Page</code> if Predicates assigned to them evaluates to 
- * <code>true</code>. If there will be any Shepherd which will match this condition, 
+ * for specific <code>Page</code> if Predicates assigned to them evaluates to
+ * <code>true</code>. If there will be any Shepherd which will match this condition,
  * <code>Application</code> will dispatch user request to <code>Page</code> having
- * action key equal to <code>pageRef</code> remembered by this Shepherd.</p> 
+ * action key equal to <code>pageRef</code> remembered by this Shepherd.</p>
  *
  * @author Michal Jastak
- * @version $Revision: 1.4 $
  * @see pl.aislib.fm.Application
  * @see pl.aislib.fm.Page
  * @see pl.aislib.fm.PageInfo
@@ -33,9 +32,9 @@ public class Shepherd extends Object {
   /**
    * Class Constructor.
    * @param predicate <code>Predicate</code> which will be used by this Shepherd
-   * @param shepherdsDog Helper class which is responsible for getting values of some properties 
-   * @param pageRef action key of <code>Page</code> to which we should dispatch user's request 
-   *        if <code>Predicate</code> will be matched against value of some property 
+   * @param shepherdsDog Helper class which is responsible for getting values of some properties
+   * @param pageRef action key of <code>Page</code> to which we should dispatch user's request
+   *        if <code>Predicate</code> will be matched against value of some property
    * @param log workflow log.
    */
   public Shepherd(Predicate predicate, ShepherdsDog shepherdsDog, String pageRef, Log log) {
@@ -73,7 +72,7 @@ public class Shepherd extends Object {
 
   /**
    * Describe Shepherd
-   * 
+   *
    * @return String description of Shephed
    */
   public String toString() {

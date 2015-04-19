@@ -16,15 +16,14 @@ import pl.aislib.lang.Loader;
 
 /**
  * Implements {@link URIResolver} using Jar archive as repository.
- * @author Micha³ Ja¶tak
- * @version $Revision: 1.2 $
+ * @author Michal Jastak
  * @since AISLIB 0.1
  * @see <a href='http://jakarta.apache.org/commons/logging.html'>Jakarta Commons Logging Component</a>
  */
 public class JarURIResolver implements URIResolver {
 
   /**
-   * Jakarta Commons Logging Component used to store information about 
+   * Jakarta Commons Logging Component used to store information about
    * URI resolving process.
    */
   protected Log     log;
@@ -52,7 +51,7 @@ public class JarURIResolver implements URIResolver {
 
   /**
    * Turns an URI used in document(), xsl:import, or xsl:include into a Source object.
-   * URI is mapped as follows: <code>jarPrefix</code> + base + href 
+   * URI is mapped as follows: <code>jarPrefix</code> + base + href
    */
   public Source resolve (String href, String base) throws TransformerException {
     String resource = null;
@@ -61,8 +60,8 @@ public class JarURIResolver implements URIResolver {
       log.debug("resolving: base: " + base + ", href: " + href);
     }
 
-    if (base != null) { 
-      resource = base.substring (0, base.lastIndexOf ("/")); 
+    if (base != null) {
+      resource = base.substring (0, base.lastIndexOf ("/"));
     } else {
       resource = jarPrefix;
     }
@@ -82,23 +81,23 @@ public class JarURIResolver implements URIResolver {
     String      systemId = null;
 
     URL url = null;
-    try { 
-      if (base == null) { 
+    try {
+      if (base == null) {
         url = Loader.findResource(resource);
-      } else { 
+      } else {
         url = new URL(resource);
       }
-      is = url.openStream(); 
+      is = url.openStream();
       systemId = url.toString();
-    } catch (Exception ex) { 
+    } catch (Exception ex) {
       if (log != null) {
         log.error("Exception caught during URL.openStream", ex);
       }
       throw new TransformerException(ex);
     }
 
-    if (is == null) { 
-      throw new TransformerException("Cannot resolve '" + base + href + "'"); 
+    if (is == null) {
+      throw new TransformerException("Cannot resolve '" + base + href + "'");
     }
 
     result = new StreamSource(is);

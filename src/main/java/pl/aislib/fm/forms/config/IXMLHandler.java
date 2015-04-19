@@ -5,9 +5,8 @@ import org.xml.sax.SAXException;
 
 /**
  * XML handler interface.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.2 $
  */
 public interface IXMLHandler {
 

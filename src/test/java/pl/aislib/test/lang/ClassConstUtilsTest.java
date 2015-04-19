@@ -14,7 +14,6 @@ import junit.framework.TestCase;
 
 /**
  * @author Tomasz Sandecki, AIS.PL
- * @version $Revision: 1.1 $
  */
 public class ClassConstUtilsTest extends TestCase {
 

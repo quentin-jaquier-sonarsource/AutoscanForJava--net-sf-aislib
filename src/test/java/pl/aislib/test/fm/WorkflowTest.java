@@ -16,7 +16,6 @@ import junit.framework.TestCase;
  * Class for testing issues regarding file configuration parsing and loading.
  *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.2 $
  */
 public class WorkflowTest extends TestCase {
 

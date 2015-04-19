@@ -18,12 +18,12 @@ import pl.aislib.fm.shepherds.ShepherdsSchool;
 
 /**
  * This class describes servlet page attributes.
- * 
+ *
  * Those attributes are:
  * key assigned to page identyfying particular page,
  * Java class implementing page behaviour,
  * HTML template name used by this page,
- * HTML template container (frame of this HTML page), 
+ * HTML template container (frame of this HTML page),
  * HTML template slot inside of container,
  * content type and content disposition for browser,
  * triggers defined inside of this page.
@@ -33,21 +33,20 @@ import pl.aislib.fm.shepherds.ShepherdsSchool;
  *   <tr><td>Tomasz Pik, AIS.PL</td></tr>
  *   <tr><td>Michal Jastak, AIS.PL</td></tr>
  * </table>
- * @version $Revision: 1.8 $
  * @since AISLIB 0.1
  */
 public class PageInfo {
 
   /**
    * Action key for the page.
-   */  
+   */
   private String actionKey;
-  
+
   /**
    * Name of main template for the page.
    */
   private String templateName;
-  
+
   /**
    * Type of the page.
    */
@@ -57,12 +56,12 @@ public class PageInfo {
    * Session expiration behaviour.
    */
   private boolean sessionExpiration = true;
-  
+
   /**
    * Name of the template container of the page.
    */
   private String containerTemplateName;
-  
+
   /**
    * Name of the slot in template container to put template into.
    */
@@ -72,22 +71,22 @@ public class PageInfo {
    * Map of template name and keys.
    */
   private Map templateIncludes;
-  
+
   /**
    * Map of message codes and keys.
    */
   private Map messageIncludes;
-  
+
   /**
    * Map of properties of the page.
    */
   private Map properties;
-  
+
   /**
    * List of shepherds for the page.
    */
   private List shepherds;
-  
+
   /**
    * Set of flows for the page.
    */
@@ -95,7 +94,7 @@ public class PageInfo {
 
 
   // Constructors
-  
+
   /**
    * Initializes PageInfo with actionKey.
    *
@@ -113,20 +112,20 @@ public class PageInfo {
 
 
   // Public methods
-  
+
   /**
    * Adds template to include in output of the page.
-   * 
+   *
    * @param name key in master template.
    * @param templateName name of template to include.
    */
-  public void addTemplateInclude(String name, String templateName) { 
-    templateIncludes.put(name, templateName); 
+  public void addTemplateInclude(String name, String templateName) {
+    templateIncludes.put(name, templateName);
   }
 
   /**
    * Adds message to include in output of the page.
-   * 
+   *
    * @param name key in master template.
    * @param messageCode identification code for a message.
    */
@@ -136,7 +135,7 @@ public class PageInfo {
 
   /**
    * Gets <code>Map</code> of template names and keys.
-   * 
+   *
    * Returns <code>Map</code> of template names and keys for inclusion
    * into response from the page.
    *
@@ -148,7 +147,7 @@ public class PageInfo {
 
   /**
    * Gets <code>Map</code> of message codes and keys.
-   * 
+   *
    * Returns <code>Map</code> of message codes and keys for inclusion
    * into response from the page.
    *
@@ -164,7 +163,7 @@ public class PageInfo {
    * @return name of template.
    */
   public String getTemplateName() {
-    return templateName; 
+    return templateName;
   }
 
   /**
@@ -173,7 +172,7 @@ public class PageInfo {
    * @return name of the container.
    */
   public String getContainerTemplateName() {
-    return containerTemplateName; 
+    return containerTemplateName;
   }
 
   /**
@@ -185,12 +184,12 @@ public class PageInfo {
    * @return name of the slot.
    */
   public String getContainerSlot() {
-    return containerSlot; 
+    return containerSlot;
   }
 
   /**
    * Sets template container for the page.
-   * 
+   *
    * @param containerTemplateName name of the container.
    * @param containerSlot slot in template defined in the container.
    */
@@ -201,7 +200,7 @@ public class PageInfo {
 
   /**
    * Sets properties of the page.
-   * 
+   *
    * @param properties properties of the page.
    */
   protected void setProperties(Map properties) {
@@ -210,25 +209,25 @@ public class PageInfo {
 
   /**
    * Gets action key for the page.
-   * 
-   * @return action key for the page. 
+   *
+   * @return action key for the page.
    */
   public String getActionKey() {
-    return actionKey; 
+    return actionKey;
   }
 
   /**
    * Returns <code>Class</code> for the page.
-   * 
+   *
    * @return <code>Class</code> for the page.
    */
   public Class getClazz() {
-    return clazz; 
+    return clazz;
   }
 
   /**
    * Checks 'equality' of two PageInfo objects.
-   * 
+   *
    * This 'equality' is defined as equality of their <code>actionKeys</code>.</p>
    * <p>You may use this method with following argument types:
    * <ul>
@@ -236,7 +235,7 @@ public class PageInfo {
    *   <li>String containing <code>actionKey</code> for <code>PageInfo</code> object to compare</li>
    * </ul>
    * </p>
-   * 
+   *
    * @param object PageInfo object or <code>actionKey</code> String to check.
    * @return true if PageInfo objects are equal in above meaning.
    * @see java.lang.Object#equals(java.lang.Object)
@@ -262,19 +261,19 @@ public class PageInfo {
 
 
   // Protected methods
-  
+
   /**
    * Method called by Workflow class when reading XML configuration.
    *
    * @param templateName name of main template for the page.
    */
-  protected void setTemplateName(String templateName) { 
-    this.templateName = templateName; 
+  protected void setTemplateName(String templateName) {
+    this.templateName = templateName;
   }
-  
+
   /**
    * Sets <em>session expiration<code> beahviour.
-   * 
+   *
    * Method called by Workflow class when reading XML configuration.
    *
    * @param _sessionExpiration session expiration behaviour.
@@ -297,7 +296,7 @@ public class PageInfo {
 
 
   // Package methods
-  
+
   /**
    * Method called by Workflow class when reading XML configuration.
    *
@@ -309,7 +308,7 @@ public class PageInfo {
 
   /**
    * Creates {@link Page} object.
-   * 
+   *
    * @return {@link Page} subclass.
    * @throws ServletException if an error occurs during page creation.
    */
@@ -336,12 +335,12 @@ public class PageInfo {
    * @param shepherd to be added.
    */
   void addShepherd(Shepherd shepherd) {
-    shepherds.add(shepherd); 
+    shepherds.add(shepherd);
   }
 
   /**
    * Register flow from descibed page to page with given name.
-   * 
+   *
    * @param pageName name of page to which flow is possible.
    */
   void addFlow(String pageName) {

@@ -32,7 +32,6 @@ import pl.aislib.util.predicates.servlet.IsNewHttpSessionPredicate;
  *   <tr><td>Tomasz Pik, AIS.PL</td></tr>
  *   <tr><td>Michal Jastak, AIS.PL</td></tr>
  * </table>
- * @version $Revision: 1.13 $
  * @since AISLIB 0.1
  *
  * @see Application

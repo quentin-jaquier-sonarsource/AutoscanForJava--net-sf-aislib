@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Helper class used for testing HttpServletRequest attributes.
  * @author Michal Jastak
- * @version $Revision: 1.3 $
  * @since AISLIB 0.4
  * @see Shepherd
  * @see ShepherdsDog
@@ -22,11 +21,11 @@ public class DogWatchingHttpRequestAttributes extends AbstractShepherdsDog {
   /**
    * Returns watched attribute for given HttpServletRequest.
    * <p>Before you will call this method, you should set name of attribute which should be watched using
-   * {@link #setWatchedProperty} method, if you forget to do this, you will generate beautiful 
+   * {@link #setWatchedProperty} method, if you forget to do this, you will generate beautiful
    * <code>IllegalStateException</code>.</p>
-   * <p>Using this method with second argument other than HttpServletRequest will also cause an error, 
+   * <p>Using this method with second argument other than HttpServletRequest will also cause an error,
    * this time <code>IllegalArgumentException</code>.</p>
-   * 
+   *
    * @param pasture Universe in which everything happens
    * @param sheep HttpServletRequest object which is observed by this one
    * @return value of watched attribute for <code>sheep</code> object
@@ -43,7 +42,7 @@ public class DogWatchingHttpRequestAttributes extends AbstractShepherdsDog {
 
   /**
    * Describe Shepherd Dog
-   * 
+   *
    * @return String contains description of Dog
    */
   public String toString() {

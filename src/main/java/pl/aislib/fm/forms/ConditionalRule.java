@@ -11,7 +11,6 @@ import java.util.Map;
  * described by value of <code>check</code> parameter.
  *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.1 $
  */
 public abstract class ConditionalRule extends Rule {
 

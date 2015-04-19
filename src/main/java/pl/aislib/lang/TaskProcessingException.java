@@ -2,7 +2,6 @@ package pl.aislib.lang;
 
 /**
  * @author Tomasz Sandecki
- * @version $Revision: 1.1.1.1 $
  * @since AISLIB 0.3
  */
 public class TaskProcessingException extends EncapsulatedException  {

@@ -10,7 +10,6 @@ import org.xml.sax.SAXException;
  * XML Digester for parsing and creating ImageTemplatesBean objects.
  *
  * @author Daniel Rychcik, AIS.PL
- * @version $Revision: 1.2 $
  */
 public class ImageTemplatesDigester extends Digester {
 

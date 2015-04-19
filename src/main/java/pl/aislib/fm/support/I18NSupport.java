@@ -16,10 +16,9 @@ import pl.aislib.fm.TemplateEngineException;
 
 /**
  * Support class for multi language functionality.
- * 
+ *
  * @author Andrzej Luszczyk, AIS.PL
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.4 $
  */
 public class I18NSupport implements Serializable {
 
@@ -28,7 +27,7 @@ public class I18NSupport implements Serializable {
 
   /**
    * Constructor for LanguageSupport.
-   * 
+   *
    * @param defaultLanguage default language
    * @param acceptedLanguages list of accepted languages
    */
@@ -40,15 +39,15 @@ public class I18NSupport implements Serializable {
     this.defaultLanguage = defaultLanguage;
     this.acceptedLanguages = acceptedLanguages;
   }
-  
+
   /**
    * Method processes setting the {@link Constants#LANG} attribute on the {@link HttpServletRequest}.
-   * First it tries to get <code>lang</code> parameter from {@link HttpServletRequest}. 
+   * First it tries to get <code>lang</code> parameter from {@link HttpServletRequest}.
    * If it failed then it tries to get {@link Constants#LANG} attribute from
    * {@link javax.servlet.http.HttpSession}. If it also failed then it tries to recognize language
    * from header <code>Accept-Language</code>. If all methods doesn't get any
    * result, it sets the {@link Constants#LANG} attribute to <code>space</code>.
-   * 
+   *
    * @param request {@link HttpServletRequest}.
    */
   public void process(HttpServletRequest request) {
@@ -70,14 +69,14 @@ public class I18NSupport implements Serializable {
     if (lang == null) {
       lang = defaultLanguage;
     }
-    
+
     request.setAttribute(Constants.LANG, lang);
     request.getSession().setAttribute(Constants.LANG, lang);
   }
 
   /**
    * Decorate given engine with i18n support.
-   * 
+   *
    * Use following method of loading templates
    * <ol>
    *   <li>get <code>lang</code> from request</li>
@@ -85,7 +84,7 @@ public class I18NSupport implements Serializable {
    *      and value of <code>lang</code></li>
    *   <li>if it fails, load template without value of <code>lang</code></li>
    * </ol>
-   * 
+   *
    * @param engine to decorate
    * @return TemplateEngine with i18n support
    */

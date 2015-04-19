@@ -2,14 +2,13 @@ package pl.aislib.test.fm.forms;
 
 /**
  * Class for testing dynamic date fields.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.4 $
  */
 public class FieldDateDynamicTest extends FieldTestAbstract {
 
   // Constructors
-  
+
   /**
    * @see junit.framework.TestCase#TestCase(java.lang.String)
    */
@@ -19,7 +18,7 @@ public class FieldDateDynamicTest extends FieldTestAbstract {
 
 
   // Protected methods
-  
+
   /**
    * @see pl.aislib.test.fm.forms.FieldTestAbstract#getFormName()
    */
@@ -29,7 +28,7 @@ public class FieldDateDynamicTest extends FieldTestAbstract {
 
 
   // Test methods
-  
+
   /**
    * field_001_: Dynamic field with non-empty proper dates.
    */
@@ -40,11 +39,11 @@ public class FieldDateDynamicTest extends FieldTestAbstract {
     values.put("field_001_1", "2003-06-30");
     values.put("field_001_3", "2003-07-02");
     values.put("field_001_2", "2003-07-01");
-    
+
     if (!validateForm(values)) {
       fail(MSG_003);
     }
-    
+
     printValues();
   }
 

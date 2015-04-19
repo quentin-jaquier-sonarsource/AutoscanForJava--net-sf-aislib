@@ -32,7 +32,6 @@ import pl.aislib.fm.forms.ValidateException;
  * </ul>
  *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.5 $
  * @since AISLIB 0.1
  */
 public class StringValidator extends Validator {

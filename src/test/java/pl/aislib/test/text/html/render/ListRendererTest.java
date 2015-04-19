@@ -9,9 +9,8 @@ import pl.aislib.text.html.render.ListRenderer;
 import junit.framework.TestCase;
 
 /**
- * 
+ *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.1.1.1 $
  */
 public class ListRendererTest extends TestCase {
 
@@ -35,7 +34,7 @@ public class ListRendererTest extends TestCase {
       sourceList.add(new Integer(i));
     }
   }
-  
+
   /**
    * Test documented order of method calls during <code>render</code> invocation.
    */
@@ -45,15 +44,15 @@ public class ListRendererTest extends TestCase {
 
   class SimpleOptionRenderer extends FlyweightOptionRenderer {
     private Object object;
-    
+
     public void setObject(Object object) {
       this.object = object;
     }
-    
+
     public String getContent() {
       return object.toString();
     }
-    
+
     public String getValue() {
       return object.toString();
     }

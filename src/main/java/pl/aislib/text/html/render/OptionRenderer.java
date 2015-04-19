@@ -2,9 +2,8 @@ package pl.aislib.text.html.render;
 
 /**
  * Defines minimal set of methods which is required for rendering some <em>Object</em> to HTML Option element.
- * 
+ *
  * @author Michal Jastak
- * @version $Revision: 1.1.1.1 $
  * @since AISLIB 0.5
  */
 public interface OptionRenderer {

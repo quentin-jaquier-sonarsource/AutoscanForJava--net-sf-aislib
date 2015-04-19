@@ -4,7 +4,6 @@ import java.util.TimerTask;
 
 /**
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.1 $
  */
 public abstract class CronTask extends TimerTask {
 
@@ -12,7 +11,7 @@ public abstract class CronTask extends TimerTask {
 
   /**
    * Performs task operation.
-   * 
+   *
    * @return result of given task.
    * @throws TaskProcessingException if something goes wrong.
    */
@@ -34,7 +33,7 @@ public abstract class CronTask extends TimerTask {
   /**
    * Adds the specified task listener to receive events from this task.
    *
-   * @param listener listener to be added. 
+   * @param listener listener to be added.
    */
   public void addTaskListener(TaskListener listener) {
     listenerSupport.addTaskListener(listener);
@@ -50,7 +49,7 @@ public abstract class CronTask extends TimerTask {
   }
 
   /**
-   * Notify all registerd extended task listeners with {@link ExtendedTaskListener#taskNotify} 
+   * Notify all registerd extended task listeners with {@link ExtendedTaskListener#taskNotify}
    *
    * @param object object to propagate
    */

@@ -4,7 +4,7 @@ import java.io.InputStream;
 
 import javax.servlet.ServletContext;
 
-import org.apache.commons.collections.ExtendedProperties; 
+import org.apache.commons.collections.ExtendedProperties;
 
 import org.apache.velocity.runtime.resource.Resource;
 import org.apache.velocity.runtime.resource.loader.ResourceLoader;
@@ -15,7 +15,6 @@ import org.apache.velocity.exception.ResourceNotFoundException;
  * ResourceLoader for loading templates from ServletContext.
  *
  * @author Tomasz Pik
- * @version 0.2
  */
 public class ServletContextResourceLoader extends ResourceLoader {
 
@@ -42,7 +41,7 @@ public class ServletContextResourceLoader extends ResourceLoader {
   }
 
   private String templateDir;
-  
+
   /**
    * Sets dir within servlet context used as a root for templates.
    *
@@ -53,7 +52,7 @@ public class ServletContextResourceLoader extends ResourceLoader {
   }
 
   /**
-   * 
+   *
    * @see ResourceLoader#init(ExtendedProperties)
    */
   public void init(ExtendedProperties properties) {
@@ -63,7 +62,7 @@ public class ServletContextResourceLoader extends ResourceLoader {
 
   /**
    * Open a stream within servlet context.
-   * 
+   *
    * @param source path within servlet context (prefixed by <code>dir</code>, see {@link #setTemplateDir(String)}.
    * @return stream with template.
    * @throws ResourceNotFoundException if stream don't exists.

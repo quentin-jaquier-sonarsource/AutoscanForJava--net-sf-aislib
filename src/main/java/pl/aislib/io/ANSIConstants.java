@@ -3,7 +3,6 @@ package pl.aislib.io;
 /**
  * @author Tomasz Pik, AIS.PL
  * @author Robert Blaszczyk, AIS.PL
- * @version $Revision: 1.2 $
  * @since AISLIB 0.2
  */
 public interface ANSIConstants {

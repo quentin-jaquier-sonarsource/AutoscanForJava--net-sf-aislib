@@ -3,9 +3,8 @@ package pl.aislib.fm;
 /**
  * Abstract class for encapsulating the environment specific parameters
  * for application.
- * 
+ *
  * @author Tomasz Pik
- * @version $Revision: 1.1.1.1 $
  * @since AISLIB 0.1
  */
 public abstract class ConfigAdapter {

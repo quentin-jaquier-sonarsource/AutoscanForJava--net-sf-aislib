@@ -18,7 +18,6 @@ import org.apache.commons.logging.LogFactory;
 
 /**
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.2 $
  */
 public class NumberFormatHelper {
 

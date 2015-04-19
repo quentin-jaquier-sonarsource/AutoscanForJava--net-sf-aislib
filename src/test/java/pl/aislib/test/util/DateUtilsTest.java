@@ -9,10 +9,9 @@ import pl.aislib.util.DateUtils;
 import junit.framework.TestCase;
 
 /**
- * Testing funcionality of <code>pl.aislib.util.DateUtils</code> class.
+ * Testing functionality of <code>pl.aislib.util.DateUtils</code> class.
  *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.1.1.1 $
  */
 public class DateUtilsTest extends TestCase {
 

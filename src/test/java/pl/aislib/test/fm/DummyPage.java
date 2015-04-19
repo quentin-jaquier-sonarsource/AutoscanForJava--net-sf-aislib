@@ -10,7 +10,6 @@ import pl.aislib.fm.PageResponse;
 
 /**
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.1 $
  */
 public class DummyPage extends Page {
 

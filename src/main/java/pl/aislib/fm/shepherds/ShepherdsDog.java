@@ -3,7 +3,7 @@ package pl.aislib.fm.shepherds;
 import org.apache.commons.logging.Log;
 
 /**
- * This interface should be implemented by helper classes used by <code>Shepherds</code> 
+ * This interface should be implemented by helper classes used by <code>Shepherds</code>
  * for watching some properties of <code>sheeps</code>.
  * <p>Typical use of such a class:
  * <ul>
@@ -12,14 +12,13 @@ import org.apache.commons.logging.Log;
  *   passed to this new <code>Shepherd</code>, which remembers it for future use.
  *   <code>ShepherdsSchool</code> object also calls {@link #setWatchedProperty} method
  *   for newly instantiated <code>ShepherdsDog</code> instance to prepare it for use.</li>
- *   <li>when <code>Shepherd</code> is asked to mind some sheep (typical 
+ *   <li>when <code>Shepherd</code> is asked to mind some sheep (typical
  *   {@link javax.servlet.http.HttpServletRequest} object) he calls {@link #mindTheSheep} method
  *   of this interface, which should return value of watched property</li>
  *   <li>property value returned by {@link #mindTheSheep} method is the used by <code>Shepherd</code>
  *   to decide what should be done with <code>sheep</code></li>
  *
  * @author Michal Jastak
- * @version $Revision: 1.3 $
  * @since AISLIB 0.4
  * @see Shepherd
  * @see ShepherdsSchool
@@ -50,17 +49,17 @@ public interface ShepherdsDog {
   /**
    * Returns unique code describing type of object implementing this interface.
    * <p>Value returned by this method may be one of the {@link #SESSION_ATTR}, {@link #REQUEST_PARAM} or
-   * {@link #REQUEST_ATTR}, but is not limited to those three values. One and only limitation for value returned 
+   * {@link #REQUEST_ATTR}, but is not limited to those three values. One and only limitation for value returned
    * by this method is that it should be unique.</p>
    * <p>This method is used by {@link ShepherdsSchool} when searching for appropriate
    * helper class while instatiating new {@link Shepherd}.</p>
    * @return unique code describing type of object implementing this interface
    */
   public String getBreed();
-  
+
   /**
    * Returns value of property watched by this object for given <code>sheep</code> object.
-   * <p>Before you will call this method, you should set name of parameter which should be watched 
+   * <p>Before you will call this method, you should set name of parameter which should be watched
    * using {@link #setWatchedProperty} method.</p>
    * <dl>
    * <dt><b>Note:</b></dt>

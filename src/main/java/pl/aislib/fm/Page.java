@@ -21,7 +21,6 @@ import org.apache.commons.logging.Log;
  *   <tr><td>Tomasz Pik, AIS.PL</td></tr>
  *   <tr><td>Michal Jastak, AIS.PL</td></tr>
  * </table>
- * @version $Revision: 1.7 $
  * @since AISLIB 0.1
  */
 public abstract class Page {

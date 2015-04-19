@@ -13,7 +13,6 @@ import pl.aislib.lang.ReflectionException;
  * Base rule handler class.
  *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.4 $
  */
 public abstract class RuleHandler extends PartialHandler {
 

@@ -10,7 +10,7 @@ import pl.aislib.fm.forms.FieldBuilder;
 
 /**
  * Field builder for <code>Date</code> dates.
- * 
+ *
  * <p>
  * This class is used to build date from day, month and year fields.
  * <br>
@@ -20,7 +20,7 @@ import pl.aislib.fm.forms.FieldBuilder;
  *   <li><code>month</code></li>
  *   <li><code>day</code></li>
  * </ul>
- * <br> 
+ * <br>
  * Properties:
  * <ul>
  *   <li>
@@ -31,9 +31,8 @@ import pl.aislib.fm.forms.FieldBuilder;
  *       <code>yyyy</code>, <code>yy</code>, <code>MM</code>, <code>M</code>, <code>dd</code>, <code>d</code>.
  *   </li>
  * </ul>
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.3 $
  */
 public class DateBuilder extends FieldBuilder {
 
@@ -44,19 +43,19 @@ public class DateBuilder extends FieldBuilder {
 
 
   // Constructors
-  
+
   /**
    * Constructor for DateBuilder.
    */
   public DateBuilder() {
     super();
-    
+
     format = "yyyy/MM/dd";
   }
 
 
   // Public methods
-  
+
   /**
    * @see pl.aislib.fm.forms.FieldBuilder#join(Map)
    */
@@ -112,10 +111,10 @@ public class DateBuilder extends FieldBuilder {
     if (value instanceof Date) {
       return splitDate((Date) value);
     }
-    
+
     return null;
   }
-  
+
 
   // Public property methods
 
@@ -125,7 +124,7 @@ public class DateBuilder extends FieldBuilder {
   public void setFormat(String format) {
     this.format = format;
   }
-  
+
 
   // Protected methods
 
@@ -135,18 +134,18 @@ public class DateBuilder extends FieldBuilder {
    */
   protected Map splitCalendar(Calendar value) {
     Map map = new HashMap();
-    
+
     map.put("year", new Integer(value.get(Calendar.YEAR)));
     map.put("month", new Integer(value.get(Calendar.MONTH) + 1));
     map.put("day", new Integer(value.get(Calendar.DAY_OF_MONTH)));
-    
+
     return map;
   }
 
   /**
    * @param value date given as @link{java.util.Date} object.
    * @return map of date elements as integers.
-   */  
+   */
   protected Map splitDate(Date value) {
     Calendar cal = new GregorianCalendar();
     cal.setTime(value);
@@ -155,7 +154,7 @@ public class DateBuilder extends FieldBuilder {
 
 
   // Private methods
-  
+
   /**
    * Replaces string with another string in a buffer.
    * @param buf buffer.

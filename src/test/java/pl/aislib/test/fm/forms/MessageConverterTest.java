@@ -8,7 +8,6 @@ import pl.aislib.util.messages.MessageFormatConverter;
 
 /**
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.7 $
  */
 public class MessageConverterTest extends FormTestAbstract {
 

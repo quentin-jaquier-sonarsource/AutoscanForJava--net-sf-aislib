@@ -47,7 +47,6 @@ import pl.aislib.util.xml.XMLUtils;
  *   <tr><td>Tomasz Pik, AIS.PL</td></tr>
  *   <tr><td>Michal Jastak, AIS.PL</td></tr>
  * </table>
- * @version $Revision: 1.18 $
  * @since AISLIB 0.1
  */
 public class Application implements Pasture {

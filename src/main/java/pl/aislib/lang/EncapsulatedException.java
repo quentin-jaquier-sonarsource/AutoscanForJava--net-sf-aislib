@@ -5,7 +5,6 @@ package pl.aislib.lang;
  *
  * @deprecated use standard <code>java.lang.Exception</code>.
  * @author Michal Jastak
- * @version $Revision: 1.3 $
  * @since AISLIB 0.1
  */
 public class EncapsulatedException extends Exception {

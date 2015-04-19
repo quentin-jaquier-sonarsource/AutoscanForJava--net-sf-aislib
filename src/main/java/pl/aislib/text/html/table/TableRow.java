@@ -22,7 +22,6 @@ import pl.aislib.text.html.attrs.EnumeratedAttribute;
  * </ul>
  * </p>
  * @author Michal Jastak
- * @version $Revision: 1.1.1.1 $
  * @since AISLIB 0.2
  */
 public class TableRow extends AbstractTableObject {

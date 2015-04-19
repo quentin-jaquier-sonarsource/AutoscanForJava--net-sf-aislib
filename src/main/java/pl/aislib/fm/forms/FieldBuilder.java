@@ -6,9 +6,8 @@ import java.util.Map;
 
 /**
  * Class used for building complex fields out of other fields.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.2 $
  */
 public abstract class FieldBuilder {
 
@@ -19,7 +18,7 @@ public abstract class FieldBuilder {
 
 
   // Constructors
-  
+
   /**
    * Constructor for FieldBuilder.
    */
@@ -82,14 +81,14 @@ public abstract class FieldBuilder {
     }
 
     Map result = new HashMap();
-    
+
     for (Iterator i = mapping.entrySet().iterator(); i.hasNext();) {
       Map.Entry me = (Map.Entry) i.next();
       String fieldParameter = (String) me.getKey();
       String fieldName = (String) me.getValue();
       result.put(fieldName, values.get(fieldParameter));
     }
-    
+
     return result;
   }
 

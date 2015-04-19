@@ -2,12 +2,11 @@ package pl.aislib.fm.messages;
 
 /**
  * Core interface for converting messages.
- * 
+ *
  * The idea is to allow messages to be modified before being used later.
  * This technique has been implemented for messages generated from forms' validation.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.3 $
  */
 public interface IMessageConverter {
 

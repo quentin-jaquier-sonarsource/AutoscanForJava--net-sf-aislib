@@ -6,7 +6,6 @@ import org.apache.commons.lang.exception.NestableException;
  * Encapsulation of <em>reflection</em> exceptions.
  *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.3 $
  * @since aislib 0.5.2
  */
 public class ReflectionException extends NestableException {

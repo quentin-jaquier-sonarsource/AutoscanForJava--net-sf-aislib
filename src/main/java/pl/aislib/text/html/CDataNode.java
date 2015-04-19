@@ -5,11 +5,10 @@ import org.jdom.Element;
 
 /**
  * @author Michal Jastak
- * @version $Revision: 1.1.1.1 $
  * @since AISLIB 0.1
  */
 public class CDataNode extends AbstractHTMLObject {
-  
+
   /**
    *
    */

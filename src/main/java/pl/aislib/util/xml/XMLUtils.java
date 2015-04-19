@@ -17,7 +17,6 @@ import org.xml.sax.SAXException;
  *
  * @author Tomasz Pik
  * @author Michal Jastak
- * @version $Revision: 1.4 $
  * @since AISLIB 0.1
  */
 public class XMLUtils {
@@ -25,8 +24,8 @@ public class XMLUtils {
   /**
    * Creates {@link XMLReader}.
    *
-   * @param validating specify is created readed should be validating.
-   * @param namespaceAware specify if created reader should be namespace awared.
+   * @param validating specify is created reader should be validating.
+   * @param namespaceAware specify if created reader should be namespace aware.
    * @return new XMLReader with specified validating/namespace related behaviour.
    * @exception SAXException exception if underlying JAXP implementation cannot provide specified reader.
    */
@@ -53,7 +52,7 @@ public class XMLUtils {
    *
    * Open stream from given <code>url</code> and create <code>InputSource</code>.
    * Sets <code>systemId</code> using path specified by <code>url</code>.
-   * 
+   *
    * @param url represents resource that should be converted to <code>InputSource</code>.
    * @return InputSource with <code>systemId</code>.
    * @throws IOException if stream from <code>url</code> cannot be opened.
@@ -68,5 +67,5 @@ public class XMLUtils {
     result.setSystemId(url.toString());
     return result;
   }
- 
+
 } // class

@@ -9,7 +9,6 @@ import pl.aislib.fm.PageResponse;
  * Static page that returns an empty map in response.
  *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.2 $
  * @since AISLIB 0.5.2
  */
 public class StaticPage extends Page {

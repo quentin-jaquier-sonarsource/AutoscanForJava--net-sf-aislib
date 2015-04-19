@@ -41,7 +41,6 @@ import pl.aislib.util.validators.Validator;
  * This way, messages can be more dynamic.
  *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.12 $
  */
 public class MessageFormatConverter implements IMessageConverter {
 

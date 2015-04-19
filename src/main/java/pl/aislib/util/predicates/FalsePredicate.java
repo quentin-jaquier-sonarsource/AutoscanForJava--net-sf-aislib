@@ -7,7 +7,6 @@ import org.apache.commons.collections.Predicate;
  *
  * @author Michal Jastak
  * @author Tomasz Pik
- * @version $Revision: 1.1.1.1 $
  * @since AISLIB 0.4
  */
 public class FalsePredicate implements Predicate {

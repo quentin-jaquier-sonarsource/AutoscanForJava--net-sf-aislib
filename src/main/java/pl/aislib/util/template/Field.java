@@ -11,7 +11,6 @@ import java.awt.Font;
  *
  * @author Daniel Rychcik, AIS.PL
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.2 $
  */
 public class Field {
 

@@ -4,9 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * Helper class for using while testing whole {@link HttpServletRequest}.
- * 
+ *
  * @author Tomasz Pik, AIS.PL
- * @version $Revision: 1.2 $
  * @since AISLIB 0.5
  */
 public class DogWatchingHttpRequest extends AbstractShepherdsDog {
@@ -20,10 +19,10 @@ public class DogWatchingHttpRequest extends AbstractShepherdsDog {
 
   /**
    * Check if given sheep is a {@link HttpServletRequest}.
-   * 
+   *
    * Returns <code>sheep</code> if it's a {@link HttpServletRequest},
    * otherwise throws {@link IllegalArgumentException}.
-   * 
+   *
    * @param pasture Universe in which everything happens.
    * @param sheep HttpServletRequest object which is observed by this one.
    * @return <code>sheep</code>.
@@ -38,7 +37,7 @@ public class DogWatchingHttpRequest extends AbstractShepherdsDog {
 
   /**
    * Describe Shepherd Dog.
-   * 
+   *
    * @return String contains description of Dog.
    */
   public String toString() {

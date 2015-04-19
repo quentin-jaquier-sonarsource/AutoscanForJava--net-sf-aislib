@@ -4,9 +4,8 @@ import pl.aislib.fm.forms.ValidateException;
 
 /**
  * Class for testing date fields.
- * 
+ *
  * @author Wojciech Swiatek, AIS.PL
- * @version $Revision: 1.5 $
  */
 public class FieldDateTest extends FieldTestAbstract {
 
@@ -21,7 +20,7 @@ public class FieldDateTest extends FieldTestAbstract {
 
 
   // Protected methods
-  
+
   /**
    * @see pl.aislib.test.fm.forms.FieldTestAbstract#getFormName()
    */
@@ -31,14 +30,14 @@ public class FieldDateTest extends FieldTestAbstract {
 
 
   // Test methods
-  
+
   /**
    * field_001: Proper date after start range.
    * @throws ValidateException if test failed.
    */
   public void test001Ok() throws ValidateException {
     field = form.getField("field_001");
-    
+
     validateField("2003-07-01");
   }
 
@@ -48,16 +47,16 @@ public class FieldDateTest extends FieldTestAbstract {
    */
   public void test002Ok() throws ValidateException {
     field = form.getField("field_001");
-    
+
     validateField("2003-06-30");
   }
-  
+
   /**
    * field_001: Empty string.
    */
   public void test003Bad() {
     field = form.getField("field_001");
-    
+
     try {
       validateField("");
       fail(MSG_001);
@@ -71,7 +70,7 @@ public class FieldDateTest extends FieldTestAbstract {
    */
   public void test004Bad() {
     field = form.getField("field_001");
-    
+
     try {
       validateField("1a");
       fail(MSG_001);
@@ -79,13 +78,13 @@ public class FieldDateTest extends FieldTestAbstract {
       checkErrorCode(2);
     }
   }
-  
+
   /**
    * field_001: Proper date before start range.
    */
   public void test005Bad() {
     field = form.getField("field_001");
-    
+
     try {
       validateField("2003-06-29");
       fail(MSG_001);
@@ -100,7 +99,7 @@ public class FieldDateTest extends FieldTestAbstract {
    */
   public void test006Ok() throws ValidateException {
     field = form.getField("field_002");
-    
+
     validateField("2003-07-01");
   }
 
@@ -110,7 +109,7 @@ public class FieldDateTest extends FieldTestAbstract {
    */
   public void test007Ok() throws ValidateException {
     field = form.getField("field_002");
-    
+
     validateField("2003-07-31");
   }
 
@@ -119,7 +118,7 @@ public class FieldDateTest extends FieldTestAbstract {
    */
   public void test008Bad() {
     field = form.getField("field_002");
-    
+
     try {
       validateField("2003-08-01");
       fail(MSG_001);

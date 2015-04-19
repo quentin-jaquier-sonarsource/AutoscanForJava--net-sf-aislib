@@ -28,7 +28,6 @@ import pl.aislib.fm.forms.config.IRule;
  *   <tr><td>Michal Jastak, AIS.PL</td></tr>
  *   <tr><td>Wojciech Swiatek, AIS.PL</td></tr>
  * </table>
- * @version $Revision: 1.8 $
  * @since AISLIB 0.1
  */
 public abstract class Rule implements IRule, IEntity {
