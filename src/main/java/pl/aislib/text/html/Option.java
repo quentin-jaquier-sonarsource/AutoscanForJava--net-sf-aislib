@@ -26,7 +26,7 @@ import pl.aislib.text.html.attrs.EnumeratedAttribute;
  * @since AISLIB 0.1
  */
 public class Option extends AbstractHTMLObject {
-  
+
   /**
    *
    */
@@ -38,14 +38,16 @@ public class Option extends AbstractHTMLObject {
     try {
       selectAttrs.add(new CDataAttribute("label"));
       selectAttrs.add(new CDataAttribute("value"));
-
-      EnumeratedAttribute selected = new EnumeratedAttribute("selected");
-      selected.addAllowedValue("selected");
-      selectAttrs.add(selected);
-
-      EnumeratedAttribute disabled = new EnumeratedAttribute("disabled");
-      selected.addAllowedValue("disabled");
-      selectAttrs.add(disabled);
+      {
+        EnumeratedAttribute selected = new EnumeratedAttribute("selected");
+        selected.addAllowedValue("selected");
+        selectAttrs.add(selected);
+      }
+      {
+        EnumeratedAttribute disabled = new EnumeratedAttribute("disabled");
+        disabled.addAllowedValue("disabled");
+        selectAttrs.add(disabled);
+      }
     } catch (ClassNotFoundException cnfe) {
     }
     addAttributesSet(selectAttrs);
